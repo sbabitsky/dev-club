@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace dev.club.solid
 {
-    public class KeyVaultCertificateValidator : System.IdentityModel.Selectors.X509CertificateValidator
+    public class KeyVaultCertificateValidator : X509CertificateValidator
     {
         private readonly IConfiguration _configuration;
         private readonly ILogger _logger;

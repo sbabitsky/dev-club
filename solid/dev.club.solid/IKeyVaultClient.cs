@@ -6,6 +6,8 @@ namespace dev.club.solid
     {
         Task<X509Certificate2> GetCertificateAsync(object any);
 
+        Task<X509Certificate2> UploadCertificateAsync(object any);
+
         Task DeleteCertificateAsync(object any);
 
         Task<object> GetSecretAsync(object any);
