@@ -39,21 +39,21 @@ namespace dev.club.solid
 
                     if (keyVaultCertificate == null)
                     {
-                        throw new SecurityTokenValidationException($"Client certificate with thumbprint {certificate.Thumbprint} not found in WexKeyStore");
+                        throw new SecurityTokenValidationException($"Client certificate with thumbprint {certificate.Thumbprint} not found in KeyVault");
                     }
 
                     if (!keyVaultCertificate.Equals(certificate))
                     {
-                        throw new SecurityTokenValidationException($"Client certificate with thumbprint {certificate.Thumbprint} is invalid in WexKeyStore");
+                        throw new SecurityTokenValidationException($"Client certificate with thumbprint {certificate.Thumbprint} is invalid in KeyVault");
                     }
 
-                    _logger.LogInformation($"Client certificate with thumbprint {certificate.Thumbprint} successfully validated in WexKeyStore");
+                    _logger.LogInformation($"Client certificate with thumbprint {certificate.Thumbprint} successfully validated in KeyVault");
                     return;
                 }
                 catch (Exception ex)
                 {
                     throw new SecurityTokenValidationException(
-                        $"Failed to retrieve certificate with thumbprint {certificate.Thumbprint} from WexKeyStore: {ex.Message}",
+                        $"Failed to retrieve certificate with thumbprint {certificate.Thumbprint} from KeyVault: {ex.Message}",
                         ex);
                 }
             }
