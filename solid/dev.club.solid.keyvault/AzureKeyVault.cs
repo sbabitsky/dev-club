@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace dev.club.solid
+namespace dev.club.solid.keyvault
 {
-    internal class AzureKeyVault : IKeyVault
+    public class AzureKeyVault : IKeyVault
     {
         public Task<IKeyVaultClient> CreateClientAsync()
         {

@@ -1,8 +1,10 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
 
-namespace dev.club.solid
+namespace dev.club.solid.keyvault
 {
-    internal interface IKeyVaultClient: IDisposable
+    public interface IKeyVaultClient: IDisposable
     {
         Task<X509Certificate2> GetCertificateAsync(object any);
 

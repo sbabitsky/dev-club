@@ -1,6 +1,7 @@
 ﻿using System.IdentityModel.Selectors;
 using System.Security.Cryptography.X509Certificates;
 using dev.club.solid.Hidden;
+using dev.club.solid.keyvault;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 

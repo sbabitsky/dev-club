@@ -1,6 +1,8 @@
-﻿namespace dev.club.solid
+﻿using System.Threading.Tasks;
+
+namespace dev.club.solid.keyvault
 {
-    internal interface IKeyVault
+    public interface IKeyVault
     {
         Task<IKeyVaultClient> CreateClientAsync();
     }
