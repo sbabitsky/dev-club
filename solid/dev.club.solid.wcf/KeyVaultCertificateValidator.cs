@@ -1,11 +1,14 @@
-﻿using System.IdentityModel.Selectors;
+﻿using System;
+using System.Collections.Generic;
+using System.IdentityModel.Selectors;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using dev.club.solid.Hidden;
+using System.Threading.Tasks;
 using dev.club.solid.keyvault;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace dev.club.solid
+namespace dev.club.solid.wcf
 {
     public class KeyVaultCertificateValidator : X509CertificateValidator
     {

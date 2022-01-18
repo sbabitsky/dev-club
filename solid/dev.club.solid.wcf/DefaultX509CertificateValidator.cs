@@ -1,7 +1,7 @@
 ﻿using System.IdentityModel.Selectors;
 using System.Security.Cryptography.X509Certificates;
 
-namespace dev.club.solid.Hidden
+namespace dev.club.solid.wcf
 {
     internal class DefaultX509CertificateValidator : X509CertificateValidator
     {

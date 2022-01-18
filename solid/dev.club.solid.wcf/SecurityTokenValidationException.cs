@@ -1,4 +1,6 @@
-﻿namespace dev.club.solid.Hidden
+﻿using System;
+
+namespace dev.club.solid.wcf
 {
     internal class SecurityTokenValidationException : Exception
     {
