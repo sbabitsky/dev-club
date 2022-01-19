@@ -7,7 +7,7 @@
     {
         public string Statement => "A class should have only one reason to change.";
         public string Why => @"Because each responsibility has its own axis of change. When the requirements change,
-                              the appropriate change must be applied among the classes. Less responsibilities == less updated needed.";
+                              the appropriate change must be applied among the classes. Less responsibilities == less updates needed.";
     }
 
     /// <summary>
@@ -47,7 +47,7 @@
     /// </summary>
     public class TheInterfaceSegregationPrinciple
     {
-        public string Statement => "Clients should not be forced to depend on methods that they do not use";
+        public string Statement => "Clients should not be forced to depend on methods that they do not use.";
 
         public string Why => @"When clients are forced to depend on methods that they don't use, then those clients
                                are subject to changes to those methods. This results in coupling between all the clients";

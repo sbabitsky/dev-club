@@ -5,26 +5,29 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using dev.club.solid.keyvault;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace dev.club.solid.wcf
 {
     public class KeyVaultCertificateValidator : X509CertificateValidator
     {
-        private readonly IConfiguration _configuration;
         private readonly ILogger _logger;
+        private IKeyVault _keyVault;
+        private readonly ExchangeConfiguration _exchangeConfiguration;
 
-        public KeyVaultCertificateValidator(IConfiguration configuration, ILogger logger)
+        // key - thumbprint
+        // value - unique id
+        public KeyVaultCertificateValidator(IKeyVault keyVault, ExchangeConfiguration exchangeConfiguration, ILogger logger)
         {
-            _configuration = configuration;
+            _keyVault = keyVault;
+            _exchangeConfiguration = exchangeConfiguration;
             _logger = logger;
         }
 
+        // Resp - 0
         public override void Validate(X509Certificate2 certificate)
         {
-            var configDictionary = GetExchangeIntegrationConfiguration();
-            var matchingThumbprints = configDictionary?.Where(item => item.Key.ToUpperInvariant() == certificate.Thumbprint.ToUpperInvariant());
+            var matchingThumbprints = _exchangeConfiguration?.CertificateMappings.Where(item => item.Thumbprint.ToUpperInvariant() == certificate.Thumbprint.ToUpperInvariant());
 
             if (matchingThumbprints?.Count() > 1)
             {
@@ -39,6 +42,7 @@ namespace dev.club.solid.wcf
 
                 try
                 {
+                    // Resp - 2
                     var keyVaultCertificate = LoadKeyVaultCertificateAsync(uuid).GetAwaiter().GetResult();
 
                     if (keyVaultCertificate == null)
@@ -69,12 +73,6 @@ namespace dev.club.solid.wcf
             _logger.LogInformation($"Client certificate with thumbprint {certificate.Thumbprint} successfuly validated in the default storage");
         }
 
-        private IDictionary<string, string> GetExchangeIntegrationConfiguration()
-        {
-            return _configuration.GetSection("KeyVault:ExchangeIntegrationConfiguration")
-                .Get<IDictionary<string, string>>();
-        }
-
         internal virtual void ValidateCertificate(X509CertificateValidator x509CertificateValidator, X509Certificate2 certificate)
         {
             try
@@ -91,8 +89,9 @@ namespace dev.club.solid.wcf
 
         private async Task<X509Certificate2> LoadKeyVaultCertificateAsync(string uuid)
         {
-            using (var client = await new AzureKeyVault().CreateClientAsync())
+            using (var client = await _keyVault.CreateClientAsync())
             {
+                // Resp - 4 - load certificate
                 return await client.GetCertificateAsync(uuid);
             }
         }
