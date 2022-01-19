@@ -1,4 +1,4 @@
-﻿namespace dev.club.solid
+﻿namespace dev.club.solid.host
 {
     /// <summary>
     /// // SRP: The Single-Responsibility Principle

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid", "dev.club.solid.csproj", "{B70020B4-036B-491D-9E1F-99801D49A196}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.host", "dev.club.solid.host.csproj", "{B70020B4-036B-491D-9E1F-99801D49A196}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.solid.keyvault", "..\dev.club.solid.keyvault\dev.club.solid.keyvault.csproj", "{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}"
 EndProject
