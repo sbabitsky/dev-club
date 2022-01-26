@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using dev.club.solid.keyvault;
+using dev.club.solid.azurekeyvault;
 using dev.club.solid.wcf;
 
 var validator = new KeyVaultCertificateValidator(null!, new ExchangeConfiguration

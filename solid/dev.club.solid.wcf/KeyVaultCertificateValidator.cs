@@ -4,7 +4,7 @@ using System.IdentityModel.Selectors;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using dev.club.solid.keyvault;
+using dev.club.solid.azurekeyvault;
 using Microsoft.Extensions.Logging;
 
 namespace dev.club.solid.wcf
@@ -12,14 +12,14 @@ namespace dev.club.solid.wcf
     public class KeyVaultCertificateValidator : X509CertificateValidator
     {
         private readonly ILogger _logger;
-        private IKeyVault _keyVault;
+        private IAzureKeyVault _azureKeyVault;
         private readonly ExchangeConfiguration _exchangeConfiguration;
 
         // key - thumbprint
         // value - unique id
-        public KeyVaultCertificateValidator(IKeyVault keyVault, ExchangeConfiguration exchangeConfiguration, ILogger logger)
+        public KeyVaultCertificateValidator(IAzureKeyVault azureKeyVault, ExchangeConfiguration exchangeConfiguration, ILogger logger)
         {
-            _keyVault = keyVault;
+            _azureKeyVault = azureKeyVault;
             _exchangeConfiguration = exchangeConfiguration;
             _logger = logger;
         }
@@ -89,7 +89,7 @@ namespace dev.club.solid.wcf
 
         private async Task<X509Certificate2> LoadKeyVaultCertificateAsync(string uuid)
         {
-            using (var client = await _keyVault.CreateClientAsync())
+            using (var client = await _azureKeyVault.CreateClientAsync())
             {
                 // Resp - 4 - load certificate
                 return await client.GetCertificateAsync(uuid);

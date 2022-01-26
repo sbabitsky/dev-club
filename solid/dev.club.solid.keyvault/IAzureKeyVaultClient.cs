@@ -2,9 +2,9 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
-namespace dev.club.solid.keyvault
+namespace dev.club.solid.azurekeyvault
 {
-    public interface IKeyVaultClient: IDisposable
+    public interface IAzureKeyVaultClient: IDisposable
     {
         Task<X509Certificate2> GetCertificateAsync(object any);
 

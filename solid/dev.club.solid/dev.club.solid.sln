@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.host", "dev.club.solid.host.csproj", "{B70020B4-036B-491D-9E1F-99801D49A196}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.solid.keyvault", "..\dev.club.solid.keyvault\dev.club.solid.keyvault.csproj", "{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.azurekeyvault", "..\dev.club.solid.keyvault\dev.club.solid.azurekeyvault.csproj", "{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.solid.wcf", "..\dev.club.solid.wcf\dev.club.solid.wcf.csproj", "{55DDBF16-166B-4BC9-928E-69C63E5FA0C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.wcf", "..\dev.club.solid.wcf\dev.club.solid.wcf.csproj", "{55DDBF16-166B-4BC9-928E-69C63E5FA0C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

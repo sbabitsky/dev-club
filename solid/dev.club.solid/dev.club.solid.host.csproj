@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dev.club.solid.keyvault\dev.club.solid.keyvault.csproj" />
+    <ProjectReference Include="..\dev.club.solid.keyvault\dev.club.solid.azurekeyvault.csproj" />
     <ProjectReference Include="..\dev.club.solid.wcf\dev.club.solid.wcf.csproj" />
   </ItemGroup>
 

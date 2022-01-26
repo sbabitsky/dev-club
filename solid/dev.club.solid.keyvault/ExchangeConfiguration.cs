@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace dev.club.solid.keyvault
+namespace dev.club.solid.azurekeyvault
 {
     public class ExchangeConfiguration
     {

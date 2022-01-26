@@ -2,9 +2,9 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
-namespace dev.club.solid.keyvault
+namespace dev.club.solid.azurekeyvault
 {
-    public class KeyVaultClient : IKeyVaultClient
+    public class AzureKeyVaultClient : IAzureKeyVaultClient
     {
         public void Dispose()
         {
