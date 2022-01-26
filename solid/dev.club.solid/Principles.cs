@@ -38,7 +38,7 @@
     public class TheDependencyInversionPrinciple
     {
         public string StatementA => "High-level modules should not depend on low-level modules. Bot should depend on abstraction.";
-        public string StatementB => "Abstractions should not depend on the details. Details should depend on abstractions.";
+        public string StatementB => "Abstractions should not depend on the implementation. Implementation should depend on abstractions.";
         public string Why => "The changes in the lower level modules have direct affect on the higher level modules.";
     }
 

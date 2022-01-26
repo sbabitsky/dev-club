@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using dev.club.solid.azurekeyvault.abstractions;
 
 namespace dev.club.solid.azurekeyvault
 {

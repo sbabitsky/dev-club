@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using dev.club.solid.azurekeyvault;
+using dev.club.solid.azurekeyvault.abstractions;
 using Microsoft.Extensions.Logging;
 
 namespace dev.club.solid.wcf
@@ -12,7 +13,7 @@ namespace dev.club.solid.wcf
     public class KeyVaultCertificateValidator : X509CertificateValidator
     {
         private readonly ILogger _logger;
-        private IAzureKeyVault _azureKeyVault;
+        private readonly IAzureKeyVault _azureKeyVault;
         private readonly ExchangeConfiguration _exchangeConfiguration;
 
         // key - thumbprint
@@ -27,7 +28,8 @@ namespace dev.club.solid.wcf
         // Resp - 0
         public override void Validate(X509Certificate2 certificate)
         {
-            var matchingThumbprints = _exchangeConfiguration?.CertificateMappings.Where(item => item.Thumbprint.ToUpperInvariant() == certificate.Thumbprint.ToUpperInvariant());
+            var matchingThumbprints = _exchangeConfiguration?.CertificateMappings
+                .Where(item => item.Thumbprint.ToUpperInvariant() == certificate.Thumbprint.ToUpperInvariant());
 
             if (matchingThumbprints?.Count() > 1)
             {
@@ -36,9 +38,7 @@ namespace dev.club.solid.wcf
 
             if (matchingThumbprints?.Count() == 1)
             {
-                _logger.LogInformation($"Client certificate thumbprint {certificate.Thumbprint} found in the exchange integration configuration");
-
-                var uuid = matchingThumbprints.First().Value;
+                var uuid = matchingThumbprints.First().UniqueId;
 
                 try
                 {
@@ -55,7 +55,6 @@ namespace dev.club.solid.wcf
                         throw new SecurityTokenValidationException($"Client certificate with thumbprint {certificate.Thumbprint} is invalid in KeyVault");
                     }
 
-                    _logger.LogInformation($"Client certificate with thumbprint {certificate.Thumbprint} successfully validated in KeyVault");
                     return;
                 }
                 catch (Exception ex)
@@ -66,11 +65,7 @@ namespace dev.club.solid.wcf
                 }
             }
 
-            _logger.LogInformation($"Client certificate thumbprint {certificate.Thumbprint} not found in the config service. Will proceed with default validation");
-
             ValidateCertificate(DefaultX509CertificateValidator.PeerOrChainTrust, certificate);
-
-            _logger.LogInformation($"Client certificate with thumbprint {certificate.Thumbprint} successfuly validated in the default storage");
         }
 
         internal virtual void ValidateCertificate(X509CertificateValidator x509CertificateValidator, X509Certificate2 certificate)
