@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Selectors;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -25,7 +24,7 @@ namespace dev.club.solid.wcf
             _logger = logger;
         }
 
-        // Resp - 0
+        // Resp
         public override void Validate(X509Certificate2 certificate)
         {
             var matchingThumbprints = _exchangeConfiguration?.CertificateMappings
@@ -42,14 +41,14 @@ namespace dev.club.solid.wcf
 
                 try
                 {
-                    // Resp - 2
+                    // Resp
                     var keyVaultCertificate = LoadKeyVaultCertificateAsync(uuid).GetAwaiter().GetResult();
 
                     if (keyVaultCertificate == null)
                     {
                         throw new SecurityTokenValidationException($"Client certificate with thumbprint {certificate.Thumbprint} not found in KeyVault");
                     }
-
+                    
                     if (!keyVaultCertificate.Equals(certificate))
                     {
                         throw new SecurityTokenValidationException($"Client certificate with thumbprint {certificate.Thumbprint} is invalid in KeyVault");
@@ -90,6 +89,5 @@ namespace dev.club.solid.wcf
                 return await client.GetCertificateAsync(uuid);
             }
         }
-
     }
 }
