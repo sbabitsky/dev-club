@@ -21,7 +21,6 @@ namespace dev.club.solid.core
         {
             if (IsTheCertificateIsStoredInAzure(thumbprint, out string uniqueId))
             {
-                // put cache
                 using (var client = await _azureKeyVault.CreateClientAsync())
                 {
                     return await client.GetCertificateAsync(uniqueId);

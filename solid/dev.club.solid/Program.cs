@@ -1,9 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using dev.club.solid.azurekeyvault;
+using dev.club.solid.azurekeyvault.abstractions;
+using dev.club.solid.core;
+using dev.club.solid.host;
 using dev.club.solid.wcf;
 
-var validator = new KeyVaultCertificateValidator(null!, new ExchangeConfiguration
+// DI container
+// Register<IAzureKeyVault>.As<AzureKeyVault>().DecoratedWith(AzureKeyVaultWithOptionalCache);
+
+//IAzureKeyVault azureKeyVault = new AzureKeyVault();
+IAzureKeyVault azureKeyVault = new AzureKeyVaultWithOptionalCache(new AzureKeyVault(), true);
+
+//--------------------
+var validator = new KeyVaultCertificateValidator(new ExternalCertificatesStore(azureKeyVault, new ExchangeConfiguration
 {
     CertificateMappings = new List<CertificateMapping>
     {
@@ -18,6 +28,12 @@ var validator = new KeyVaultCertificateValidator(null!, new ExchangeConfiguratio
             UniqueId = "Unique2"
         }
     }
-}, null!);
+}), null!);
 validator.Validate(certificate: null!);
+
+
+
+var adminPanel = new AdminPanel(azureKeyVault); // from DI
+
+
 Console.WriteLine("Hello, World!");
