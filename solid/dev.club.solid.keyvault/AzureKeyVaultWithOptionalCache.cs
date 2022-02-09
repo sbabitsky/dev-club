@@ -17,14 +17,14 @@ namespace dev.club.solid.azurekeyvault
             _enableCache = enableCache;
         }
 
-        public Task<IAzureKeyVaultClient> CreateClientAsync()
+        public async Task<IAzureKeyVaultClient> CreateClientAsync()
         {
             if (_enableCache)
             {
                 return new AzureKeyVaultClientWithCache(_original);
             }
 
-            return _original.CreateClientAsync();
+            return await _original.CreateClientAsync();
         }
     }
 }
