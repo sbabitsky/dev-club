@@ -1,10 +1,14 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
 
-namespace dev.club.solid
+namespace dev.club.solid.azurekeyvault.abstractions
 {
-    internal interface IKeyVaultClient: IDisposable
+    public interface IAzureKeyVaultClient: IDisposable
     {
         Task<X509Certificate2> GetCertificateAsync(object any);
+
+        Task<X509Certificate2> UploadCertificateAsync(object any);
 
         Task DeleteCertificateAsync(object any);
 

@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.solid", "dev.club.solid.csproj", "{B70020B4-036B-491D-9E1F-99801D49A196}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.host", "dev.club.solid.host.csproj", "{B70020B4-036B-491D-9E1F-99801D49A196}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.azurekeyvault", "..\dev.club.solid.keyvault\dev.club.solid.azurekeyvault.csproj", "{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.wcf", "..\dev.club.solid.wcf\dev.club.solid.wcf.csproj", "{55DDBF16-166B-4BC9-928E-69C63E5FA0C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.azurekeyvault.abstractions", "..\dev.club.solid.azurekeyvault.abstractions\dev.club.solid.azurekeyvault.abstractions.csproj", "{60092E94-CB8F-407C-ABDF-07B95966A03F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.solid.core", "..\dev.club.solid.core\dev.club.solid.core.csproj", "{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{B70020B4-036B-491D-9E1F-99801D49A196}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B70020B4-036B-491D-9E1F-99801D49A196}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B70020B4-036B-491D-9E1F-99801D49A196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55DDBF16-166B-4BC9-928E-69C63E5FA0C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55DDBF16-166B-4BC9-928E-69C63E5FA0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55DDBF16-166B-4BC9-928E-69C63E5FA0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55DDBF16-166B-4BC9-928E-69C63E5FA0C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60092E94-CB8F-407C-ABDF-07B95966A03F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60092E94-CB8F-407C-ABDF-07B95966A03F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60092E94-CB8F-407C-ABDF-07B95966A03F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60092E94-CB8F-407C-ABDF-07B95966A03F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
