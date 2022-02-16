@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.wcf", "..\de
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.azurekeyvault.abstractions", "..\dev.club.solid.azurekeyvault.abstractions\dev.club.solid.azurekeyvault.abstractions.csproj", "{60092E94-CB8F-407C-ABDF-07B95966A03F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.solid.core", "..\dev.club.solid.core\dev.club.solid.core.csproj", "{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.core", "..\dev.club.solid.core\dev.club.solid.core.csproj", "{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.solid.core.unittests", "..\dev.club.solid.core.unittests\dev.club.solid.core.unittests.csproj", "{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

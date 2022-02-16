@@ -37,7 +37,7 @@ namespace dev.club.solid.core
             uniqueId = string.Empty;
 
             var matchingThumbprints = _exchangeConfiguration?.CertificateMappings
-                .Where(item => item.Thumbprint.ToUpperInvariant() == thumbprint.ToUpperInvariant());
+                ?.Where(item => item.Thumbprint.ToUpperInvariant() == thumbprint.ToUpperInvariant());
 
             if (matchingThumbprints?.Count() > 1)
             {
