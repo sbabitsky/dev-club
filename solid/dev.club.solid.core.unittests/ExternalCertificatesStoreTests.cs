@@ -110,5 +110,34 @@ namespace dev.club.solid.core.unittests
             _sut = new ExternalCertificatesStore(It.IsAny<IAzureKeyVault>(), exchangeConfiguration);
             Assert.That(_sut.IsTheCertificateIsStoredInAzure(thumbprint, out string _), Is.False);
         }
+
+        [Test]
+        public void IsTheCertificateIsStoredInAzure_WhenCertificateMappingCollectionContainsMoreThanOneThumbprint_ThrowsTheException()
+        {
+            const string thumbprint = "19d5d6E2860E4080AE5A6249BBa85809";
+
+            var exchangeConfiguration = new ExchangeConfiguration
+            {
+                CertificateMappings = new List<CertificateMapping>
+                {
+                    new CertificateMapping
+                    {
+                        Thumbprint = thumbprint,
+                        UniqueId = "SomeUniqueId"
+                    },
+                    new CertificateMapping
+                    {
+                        Thumbprint = thumbprint,
+                        UniqueId = "SomeUniqueId2"
+                    }
+                }
+            };
+
+            _sut = new ExternalCertificatesStore(It.IsAny<IAzureKeyVault>(), exchangeConfiguration);
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                _sut.IsTheCertificateIsStoredInAzure(thumbprint, out string _);
+            });
+        }
     }
 }
