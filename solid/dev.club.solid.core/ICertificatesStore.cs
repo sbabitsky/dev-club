@@ -5,6 +5,6 @@ namespace dev.club.solid.core
 {
     public interface ICertificatesStore
     {
-        Task<X509Certificate2> GetCertificateAsync(string thumbprint);
+        Task<X509Certificate2> GetCertificateAsync(Thumbprint thumbprint);
     }
 }
