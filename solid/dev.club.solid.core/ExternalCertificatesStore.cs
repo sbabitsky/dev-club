@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
@@ -9,15 +10,25 @@ namespace dev.club.solid.core
     public class ExternalCertificatesStore : ICertificatesStore
     {
         private readonly IAzureKeyVault _azureKeyVault;
-        private readonly ExchangeConfiguration _exchangeConfiguration;
+        private readonly IDictionary<Thumbprint, string> _certificateMapping;
 
         public ExternalCertificatesStore(IAzureKeyVault azureKeyVault, ExchangeConfiguration exchangeConfiguration)
         {
             _azureKeyVault = azureKeyVault;
-            _exchangeConfiguration = exchangeConfiguration;
+
+            try
+            {
+                _certificateMapping = exchangeConfiguration.CertificateMappings
+                    .ToDictionary(x => (Thumbprint)x.Thumbprint, x => x.UniqueId);
+            }
+            catch
+            {
+                // log the real exception
+                throw new InvalidOperationException($"The configuration is invalid.");
+            }
         }
 
-        public async Task<X509Certificate2> GetCertificateAsync(string thumbprint)
+        public async Task<X509Certificate2> GetCertificateAsync(Thumbprint thumbprint)
         {
             if (IsTheCertificateIsStoredInAzure(thumbprint, out string uniqueId))
             {
@@ -32,22 +43,13 @@ namespace dev.club.solid.core
             return null!;
         }
 
-        public bool IsTheCertificateIsStoredInAzure(string thumbprint, out string uniqueId)
+        public bool IsTheCertificateIsStoredInAzure(Thumbprint thumbprint, out string uniqueId)
         {
             uniqueId = string.Empty;
 
-            var matchingThumbprints = _exchangeConfiguration?.CertificateMappings
-                ?.Where(item => item.Thumbprint.ToUpperInvariant() == thumbprint.ToUpperInvariant());
-
-            if (matchingThumbprints?.Count() > 1)
+            if (_certificateMapping.ContainsKey(thumbprint))
             {
-                throw new InvalidOperationException($"More than one client certificate thumbprints found in the config service for {thumbprint}");
-            }
-
-            if (matchingThumbprints?.Count() == 1)
-            {
-                uniqueId = matchingThumbprints.First().UniqueId;
-
+                uniqueId = _certificateMapping[thumbprint];
                 return true;
             }
 

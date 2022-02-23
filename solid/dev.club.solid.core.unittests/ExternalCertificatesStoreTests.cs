@@ -10,6 +10,24 @@ namespace dev.club.solid.core.unittests
     public class ExternalCertificatesStoreTests
     {
         private ExternalCertificatesStore _sut;
+        private static readonly ExchangeConfiguration _hugeExchangeConfiguration;
+
+        static ExternalCertificatesStoreTests()
+        {
+            _hugeExchangeConfiguration = new ExchangeConfiguration
+            {
+                CertificateMappings = new List<CertificateMapping>()
+            };
+
+            foreach (var i in Enumerable.Range(0, 1000))
+            {
+                _hugeExchangeConfiguration.CertificateMappings.Add(new CertificateMapping
+                {
+                    Thumbprint = i.ToString(),
+                    UniqueId = $"unique{i}"
+                });
+            }
+        }
         
         [Test]
         public void IsTheCertificateIsStoredInAzure_WhenCertificateMappingsIsEmpty_ReturnsFalse()
@@ -50,23 +68,12 @@ namespace dev.club.solid.core.unittests
         [Test]
         public void IsTheCertificateIsStoredInAzure_WhenCertificateMappingsHasTheThumbprintInItAndWeHaveALotOfCertificatesRegistered_ReturnsTrueAndTheUniqueId()
         {
-            var exchangeConfiguration = new ExchangeConfiguration
+            for (int i = 0; i < 1 * 60 * 60; i++)
             {
-                CertificateMappings = new List<CertificateMapping>()
-            };
-
-            foreach (var i in Enumerable.Range(0, 1000000))
-            {
-                exchangeConfiguration.CertificateMappings.Add(new CertificateMapping
-                {
-                    Thumbprint = i.ToString(),
-                    UniqueId = $"unique{i}"
-                });
+                _sut = new ExternalCertificatesStore(It.IsAny<IAzureKeyVault>(), _hugeExchangeConfiguration);
+                Assert.That(_sut.IsTheCertificateIsStoredInAzure("999", out string uniqueId), Is.True);
+                Assert.That(uniqueId, Is.EqualTo("unique999"));
             }
-
-            _sut = new ExternalCertificatesStore(It.IsAny<IAzureKeyVault>(), exchangeConfiguration);
-            Assert.That(_sut.IsTheCertificateIsStoredInAzure("9999", out string uniqueId), Is.True);
-            Assert.That(uniqueId, Is.EqualTo("unique9999"));
         }
 
         [Test]
@@ -92,23 +99,21 @@ namespace dev.club.solid.core.unittests
         }
 
         [Test]
-        public void IsTheCertificateIsStoredInAzure_WhenCertificateTheConfigurationIsNull_ReturnsFalse()
+        public void IsTheCertificateIsStoredInAzure_WhenCertificateTheConfigurationIsNull_ThrownsAnException()
         {
-            const string thumbprint = "19d5d6E2860E4080AE5A6249BBa85809";
-
-            _sut = new ExternalCertificatesStore(It.IsAny<IAzureKeyVault>(), null!);
-            Assert.That(_sut.IsTheCertificateIsStoredInAzure(thumbprint, out string _), Is.False);
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                _sut = new ExternalCertificatesStore(It.IsAny<IAzureKeyVault>(), null!);
+            });
         }
 
         [Test]
-        public void IsTheCertificateIsStoredInAzure_WhenCertificateMappingCollectionIsNull_ReturnsFalse()
+        public void IsTheCertificateIsStoredInAzure_WhenCertificateMappingCollectionIsNull_ThrownsAnException()
         {
-            const string thumbprint = "19d5d6E2860E4080AE5A6249BBa85809";
-
-            var exchangeConfiguration = new ExchangeConfiguration();
-
-            _sut = new ExternalCertificatesStore(It.IsAny<IAzureKeyVault>(), exchangeConfiguration);
-            Assert.That(_sut.IsTheCertificateIsStoredInAzure(thumbprint, out string _), Is.False);
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                _sut = new ExternalCertificatesStore(It.IsAny<IAzureKeyVault>(), new ExchangeConfiguration());
+            });
         }
 
         [Test]
@@ -133,10 +138,9 @@ namespace dev.club.solid.core.unittests
                 }
             };
 
-            _sut = new ExternalCertificatesStore(It.IsAny<IAzureKeyVault>(), exchangeConfiguration);
             Assert.Throws<InvalidOperationException>(() =>
             {
-                _sut.IsTheCertificateIsStoredInAzure(thumbprint, out string _);
+                _sut = new ExternalCertificatesStore(It.IsAny<IAzureKeyVault>(), exchangeConfiguration);
             });
         }
     }
