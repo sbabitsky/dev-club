@@ -45,15 +45,7 @@ namespace dev.club.solid.core
 
         public bool IsTheCertificateIsStoredInAzure(Thumbprint thumbprint, out string uniqueId)
         {
-            uniqueId = string.Empty;
-
-            if (_certificateMapping.ContainsKey(thumbprint))
-            {
-                uniqueId = _certificateMapping[thumbprint];
-                return true;
-            }
-
-            return false;
+            return _certificateMapping.TryGetValue(thumbprint, out uniqueId);
         }
     }
 }
