@@ -6,7 +6,7 @@ namespace nuget.amazon.aws.keyvault.abstractions
 {
     public interface IAwsKeyVaultClient: IDisposable
     {
-        Task<X509Certificate2> GetCertificateAsync(object any);
+        Task<X509Certificate2> GetCertificateSomehowDifferentAsync(object any);
 
         Task<X509Certificate2> UploadCertificateAsync(object any);
 

@@ -12,7 +12,7 @@ namespace nuget.amazon.aws.keyvault
             throw new NotImplementedException();
         }
 
-        public Task<X509Certificate2> GetCertificateAsync(object any)
+        public Task<X509Certificate2> GetCertificateSomehowDifferentAsync(object any)
         {
             throw new NotImplementedException();
         }

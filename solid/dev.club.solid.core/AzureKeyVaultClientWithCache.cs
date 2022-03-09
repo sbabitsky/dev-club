@@ -14,6 +14,7 @@ namespace dev.club.solid.core
         {
             _azureKeyVault = azureKeyVault;
         }
+
         public void Dispose()
         {
             throw new NotImplementedException();

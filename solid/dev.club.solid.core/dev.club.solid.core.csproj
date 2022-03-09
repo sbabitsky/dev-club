@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\dev.club.solid.azurekeyvault.abstractions\nuget.microsoft.azurekeyvault.abstractions.csproj" />
+    <ProjectReference Include="..\dev.club.solid.keyvault.abstractions\nuget.amazon.aws.keyvault.abstractions.csproj" />
   </ItemGroup>
 
 </Project>
