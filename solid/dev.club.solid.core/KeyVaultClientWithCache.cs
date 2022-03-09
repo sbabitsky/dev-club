@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using dev.club.solid.azurekeyvault.abstractions;
+using keyvault.abstractions;
 
 namespace dev.club.solid.core
 {
-    public class AzureKeyVaultClientWithCache : IAzureKeyVaultClient
+    public class KeyVaultClientWithCache : IKeyVaultClient
     {
-        private readonly IAzureKeyVault _azureKeyVault;
+        private readonly IKeyVault _keyVault;
         private readonly object MemoryCache; 
 
-        public AzureKeyVaultClientWithCache(IAzureKeyVault azureKeyVault)
+        public KeyVaultClientWithCache(IKeyVault keyVault)
         {
-            _azureKeyVault = azureKeyVault;
+            _keyVault = keyVault;
         }
 
         public void Dispose()
@@ -25,7 +25,7 @@ namespace dev.club.solid.core
             //if found in cache
             //return from cache
 
-            using (var client = await _azureKeyVault.CreateClientAsync())
+            using (var client = await _keyVault.CreateClientAsync())
             {
                 return await client.GetCertificateAsync(any);
             }

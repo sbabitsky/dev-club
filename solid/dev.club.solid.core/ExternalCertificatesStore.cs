@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using dev.club.solid.azurekeyvault.abstractions;
+using keyvault.abstractions;
 
 namespace dev.club.solid.core
 {
     public class ExternalCertificatesStore : ICertificatesStore
     {
-        private readonly IAzureKeyVault _azureKeyVault;
+        private readonly IKeyVault _keyVault;
         private readonly IDictionary<Thumbprint, string> _certificateMapping;
 
-        public ExternalCertificatesStore(IAzureKeyVault azureKeyVault, ExchangeConfiguration exchangeConfiguration)
+        public ExternalCertificatesStore(IKeyVault keyVault, ExchangeConfiguration exchangeConfiguration)
         {
-            _azureKeyVault = azureKeyVault;
+            _keyVault = keyVault;
 
             try
             {
@@ -32,7 +32,7 @@ namespace dev.club.solid.core
         {
             if (IsTheCertificateIsStoredInAzure(thumbprint, out string uniqueId))
             {
-                using (var client = await _azureKeyVault.CreateClientAsync())
+                using (var client = await _keyVault.CreateClientAsync())
                 {
                     return await client.GetCertificateAsync(uniqueId);
                 }
