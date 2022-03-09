@@ -5,15 +5,25 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.host", "dev.club.solid.host.csproj", "{B70020B4-036B-491D-9E1F-99801D49A196}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.azurekeyvault", "..\dev.club.solid.keyvault\dev.club.solid.azurekeyvault.csproj", "{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.microsoft.azurekeyvault", "..\dev.club.solid.keyvault\nuget.microsoft.azurekeyvault.csproj", "{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.wcf", "..\dev.club.solid.wcf\dev.club.solid.wcf.csproj", "{55DDBF16-166B-4BC9-928E-69C63E5FA0C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.azurekeyvault.abstractions", "..\dev.club.solid.azurekeyvault.abstractions\dev.club.solid.azurekeyvault.abstractions.csproj", "{60092E94-CB8F-407C-ABDF-07B95966A03F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.microsoft.azurekeyvault.abstractions", "..\dev.club.solid.azurekeyvault.abstractions\nuget.microsoft.azurekeyvault.abstractions.csproj", "{60092E94-CB8F-407C-ABDF-07B95966A03F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.core", "..\dev.club.solid.core\dev.club.solid.core.csproj", "{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.solid.core.unittests", "..\dev.club.solid.core.unittests\dev.club.solid.core.unittests.csproj", "{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.core.unittests", "..\dev.club.solid.core.unittests\dev.club.solid.core.unittests.csproj", "{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nuget.amazon.aws.keyvault.abstractions", "..\dev.club.solid.keyvault.abstractions\nuget.amazon.aws.keyvault.abstractions.csproj", "{D21291C0-8E22-4443-9D2E-25F32A7842BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nuget.amazon.aws.keyvault", "..\dev.club.solid.keyvault.aws\nuget.amazon.aws.keyvault.csproj", "{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{9525DBA9-13D1-464A-8758-57C734BCA40F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "amazon", "amazon", "{64F1B4EB-926F-4ECC-8AE2-3476771D8452}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microsoft", "microsoft", "{B78689F5-3B06-45C2-AB8B-916CABD3A213}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +55,25 @@ Global
 		{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D21291C0-8E22-4443-9D2E-25F32A7842BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D21291C0-8E22-4443-9D2E-25F32A7842BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D21291C0-8E22-4443-9D2E-25F32A7842BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D21291C0-8E22-4443-9D2E-25F32A7842BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2} = {B78689F5-3B06-45C2-AB8B-916CABD3A213}
+		{60092E94-CB8F-407C-ABDF-07B95966A03F} = {B78689F5-3B06-45C2-AB8B-916CABD3A213}
+		{D21291C0-8E22-4443-9D2E-25F32A7842BC} = {64F1B4EB-926F-4ECC-8AE2-3476771D8452}
+		{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F} = {64F1B4EB-926F-4ECC-8AE2-3476771D8452}
+		{64F1B4EB-926F-4ECC-8AE2-3476771D8452} = {9525DBA9-13D1-464A-8758-57C734BCA40F}
+		{B78689F5-3B06-45C2-AB8B-916CABD3A213} = {9525DBA9-13D1-464A-8758-57C734BCA40F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B23AB42C-1A92-4802-8909-62D74AE349E7}

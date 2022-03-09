@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dev.club.solid.azurekeyvault.abstractions\dev.club.solid.azurekeyvault.abstractions.csproj" />
+    <ProjectReference Include="..\dev.club.solid.keyvault.abstractions\nuget.amazon.aws.keyvault.abstractions.csproj" />
   </ItemGroup>
 
 </Project>

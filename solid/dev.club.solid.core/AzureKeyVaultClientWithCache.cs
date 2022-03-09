@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Threading.Tasks;
 using dev.club.solid.azurekeyvault.abstractions;
 
-namespace dev.club.solid.azurekeyvault
+namespace dev.club.solid.core
 {
     public class AzureKeyVaultClientWithCache : IAzureKeyVaultClient
     {

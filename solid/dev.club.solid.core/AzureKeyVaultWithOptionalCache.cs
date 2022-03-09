@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using dev.club.solid.azurekeyvault.abstractions;
 
-namespace dev.club.solid.azurekeyvault
+namespace dev.club.solid.core
 {
     public class AzureKeyVaultWithOptionalCache : IAzureKeyVault
     {

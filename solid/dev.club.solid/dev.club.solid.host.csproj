@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dev.club.solid.azurekeyvault.abstractions\dev.club.solid.azurekeyvault.abstractions.csproj" />
-    <ProjectReference Include="..\dev.club.solid.keyvault\dev.club.solid.azurekeyvault.csproj" />
+    <ProjectReference Include="..\dev.club.solid.azurekeyvault.abstractions\nuget.microsoft.azurekeyvault.abstractions.csproj" />
+    <ProjectReference Include="..\dev.club.solid.keyvault\nuget.microsoft.azurekeyvault.csproj" />
     <ProjectReference Include="..\dev.club.solid.wcf\dev.club.solid.wcf.csproj" />
   </ItemGroup>
 
