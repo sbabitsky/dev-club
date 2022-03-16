@@ -2,11 +2,11 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
-namespace nuget.amazon.aws.keyvault.abstractions
+namespace nuget.amazon.aws.kms.abstractions
 {
-    public interface IAwsKeyVaultClient: IDisposable
+    public interface IAwsKeyManagementServiceClient: IDisposable
     {
-        Task<X509Certificate2> GetCertificateSomehowDifferentAsync(object any);
+        Task<X509Certificate2> GetCertificate2Async(object any);
 
         Task<X509Certificate2> UploadCertificateAsync(object any);
 

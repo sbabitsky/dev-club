@@ -16,12 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dev.club.solid.azurekeyvault.abstractions\nuget.microsoft.azurekeyvault.abstractions.csproj" />
-    <ProjectReference Include="..\dev.club.solid.keyvault\nuget.microsoft.azurekeyvault.csproj" />
     <ProjectReference Include="..\dev.club.solid.wcf\dev.club.solid.wcf.csproj" />
     <ProjectReference Include="..\keyvault.abstractions\keyvault.abstractions.csproj" />
-    <ProjectReference Include="..\keyvault.amazon.aws.keyvault\keyvault.amazon.aws.keyvault.csproj" />
     <ProjectReference Include="..\keyvault.microsoft.azurekeyvault\keyvault.microsoft.azurekeyvault.csproj" />
+    <ProjectReference Include="..\nuget.amazon.aws.kms.abstractions\nuget.amazon.aws.kms.abstractions.csproj" />
+    <ProjectReference Include="..\nuget.amazon.aws.kms\nuget.amazon.aws.kms.csproj" />
+    <ProjectReference Include="..\nuget.microsoft.azurekeyvault.abstractions\nuget.microsoft.azurekeyvault.abstractions.csproj" />
+    <ProjectReference Include="..\nuget.microsoft.azurekeyvault\nuget.microsoft.azurekeyvault.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using dev.club.solid.azurekeyvault.abstractions;
 
-namespace dev.club.solid.azurekeyvault
+namespace nuget.amazon.aws.kms
 {
-    public class AzureKeyVaultClient : IAzureKeyVaultClient
+    public class AwsKeyManagementServiceClient : abstractions.IAwsKeyManagementServiceClient
     {
         public void Dispose()
         {
             throw new NotImplementedException();
         }
 
-        public Task<X509Certificate2> GetCertificateAsync(object any)
+        public Task<X509Certificate2> GetCertificate2Async(object any)
         {
             throw new NotImplementedException();
         }

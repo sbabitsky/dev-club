@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dev.club.solid.keyvault.abstractions\nuget.amazon.aws.keyvault.abstractions.csproj" />
+    <ProjectReference Include="..\nuget.amazon.aws.kms.abstractions\nuget.amazon.aws.kms.abstractions.csproj" />
   </ItemGroup>
 
 </Project>

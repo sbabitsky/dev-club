@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using dev.club.solid.azurekeyvault.abstractions;
 
-namespace dev.club.solid.azurekeyvault
+namespace nuget.microsoft.azurekeyvault
 {
     public class AzureKeyVault : IAzureKeyVault
     {

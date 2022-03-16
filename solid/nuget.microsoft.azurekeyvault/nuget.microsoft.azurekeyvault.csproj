@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dev.club.solid.azurekeyvault.abstractions\nuget.microsoft.azurekeyvault.abstractions.csproj" />
+    <ProjectReference Include="..\nuget.microsoft.azurekeyvault.abstractions\nuget.microsoft.azurekeyvault.abstractions.csproj" />
   </ItemGroup>
 
 </Project>

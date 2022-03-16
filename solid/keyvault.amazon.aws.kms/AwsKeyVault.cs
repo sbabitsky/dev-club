@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using keyvault.abstractions;
 
-namespace keyvault.amazon.aws.keyvault
+namespace keyvault.amazon.aws.kms
 {
     public class AwsKeyVault : IKeyVault
     {

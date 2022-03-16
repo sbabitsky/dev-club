@@ -5,19 +5,19 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.host", "dev.club.solid.host.csproj", "{B70020B4-036B-491D-9E1F-99801D49A196}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.microsoft.azurekeyvault", "..\dev.club.solid.keyvault\nuget.microsoft.azurekeyvault.csproj", "{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.microsoft.azurekeyvault", "..\nuget.microsoft.azurekeyvault\nuget.microsoft.azurekeyvault.csproj", "{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.wcf", "..\dev.club.solid.wcf\dev.club.solid.wcf.csproj", "{55DDBF16-166B-4BC9-928E-69C63E5FA0C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.microsoft.azurekeyvault.abstractions", "..\dev.club.solid.azurekeyvault.abstractions\nuget.microsoft.azurekeyvault.abstractions.csproj", "{60092E94-CB8F-407C-ABDF-07B95966A03F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.microsoft.azurekeyvault.abstractions", "..\nuget.microsoft.azurekeyvault.abstractions\nuget.microsoft.azurekeyvault.abstractions.csproj", "{60092E94-CB8F-407C-ABDF-07B95966A03F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.core", "..\dev.club.solid.core\dev.club.solid.core.csproj", "{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.core.unittests", "..\dev.club.solid.core.unittests\dev.club.solid.core.unittests.csproj", "{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nuget.amazon.aws.keyvault.abstractions", "..\dev.club.solid.keyvault.abstractions\nuget.amazon.aws.keyvault.abstractions.csproj", "{D21291C0-8E22-4443-9D2E-25F32A7842BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nuget.amazon.aws.kms.abstractions", "..\nuget.amazon.aws.kms.abstractions\nuget.amazon.aws.kms.abstractions.csproj", "{D21291C0-8E22-4443-9D2E-25F32A7842BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nuget.amazon.aws.keyvault", "..\dev.club.solid.keyvault.aws\nuget.amazon.aws.keyvault.csproj", "{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nuget.amazon.aws.kms", "..\nuget.amazon.aws.kms\nuget.amazon.aws.kms.csproj", "{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{9525DBA9-13D1-464A-8758-57C734BCA40F}"
 EndProject
@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keyvault.abstractions", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keyvault.microsoft.azurekeyvault", "..\keyvault.microsoft.azurekeyvault\keyvault.microsoft.azurekeyvault.csproj", "{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keyvault.amazon.aws.keyvault", "..\keyvault.amazon.aws.keyvault\keyvault.amazon.aws.keyvault.csproj", "{661E7E3D-8F91-4F0F-826B-C36A07895F9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keyvault.amazon.aws.kms", "..\keyvault.amazon.aws.kms\keyvault.amazon.aws.kms.csproj", "{661E7E3D-8F91-4F0F-826B-C36A07895F9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
