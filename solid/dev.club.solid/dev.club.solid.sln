@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.core", "..\d
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.core.unittests", "..\dev.club.solid.core.unittests\dev.club.solid.core.unittests.csproj", "{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nuget.amazon.aws.kms.abstractions", "..\nuget.amazon.aws.kms.abstractions\nuget.amazon.aws.kms.abstractions.csproj", "{D21291C0-8E22-4443-9D2E-25F32A7842BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.amazon.aws.kms.abstractions", "..\nuget.amazon.aws.kms.abstractions\nuget.amazon.aws.kms.abstractions.csproj", "{D21291C0-8E22-4443-9D2E-25F32A7842BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nuget.amazon.aws.kms", "..\nuget.amazon.aws.kms\nuget.amazon.aws.kms.csproj", "{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.amazon.aws.kms", "..\nuget.amazon.aws.kms\nuget.amazon.aws.kms.csproj", "{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{9525DBA9-13D1-464A-8758-57C734BCA40F}"
 EndProject
@@ -25,11 +25,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "amazon", "amazon", "{64F1B4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microsoft", "microsoft", "{B78689F5-3B06-45C2-AB8B-916CABD3A213}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keyvault.abstractions", "..\keyvault.abstractions\keyvault.abstractions.csproj", "{EC457FB1-6EFE-4D3A-8F17-A2A83D6F098E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "keyvault.abstractions", "..\keyvault.abstractions\keyvault.abstractions.csproj", "{EC457FB1-6EFE-4D3A-8F17-A2A83D6F098E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keyvault.microsoft.azurekeyvault", "..\keyvault.microsoft.azurekeyvault\keyvault.microsoft.azurekeyvault.csproj", "{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "keyvault.microsoft.azurekeyvault", "..\keyvault.microsoft.azurekeyvault\keyvault.microsoft.azurekeyvault.csproj", "{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keyvault.amazon.aws.kms", "..\keyvault.amazon.aws.kms\keyvault.amazon.aws.kms.csproj", "{661E7E3D-8F91-4F0F-826B-C36A07895F9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "keyvault.amazon.aws.kms", "..\keyvault.amazon.aws.kms\keyvault.amazon.aws.kms.csproj", "{661E7E3D-8F91-4F0F-826B-C36A07895F9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "keyvault", "keyvault", "{7C120C8E-B50C-45EF-88B0-CF90576B96B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +94,9 @@ Global
 		{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F} = {64F1B4EB-926F-4ECC-8AE2-3476771D8452}
 		{64F1B4EB-926F-4ECC-8AE2-3476771D8452} = {9525DBA9-13D1-464A-8758-57C734BCA40F}
 		{B78689F5-3B06-45C2-AB8B-916CABD3A213} = {9525DBA9-13D1-464A-8758-57C734BCA40F}
+		{EC457FB1-6EFE-4D3A-8F17-A2A83D6F098E} = {7C120C8E-B50C-45EF-88B0-CF90576B96B6}
+		{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4} = {7C120C8E-B50C-45EF-88B0-CF90576B96B6}
+		{661E7E3D-8F91-4F0F-826B-C36A07895F9E} = {7C120C8E-B50C-45EF-88B0-CF90576B96B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B23AB42C-1A92-4802-8909-62D74AE349E7}

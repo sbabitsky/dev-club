@@ -4,7 +4,7 @@ using keyvault.abstractions;
 
 namespace keyvault.amazon.aws.kms
 {
-    public class AwsKeyVault : IKeyVault
+    public class AwsKeyManagementServiceKeyVault : IKeyVault
     {
         public Task<IKeyVaultClient> CreateClientAsync()
         {

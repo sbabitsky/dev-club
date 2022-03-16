@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\dev.club.solid.wcf\dev.club.solid.wcf.csproj" />
     <ProjectReference Include="..\keyvault.abstractions\keyvault.abstractions.csproj" />
+    <ProjectReference Include="..\keyvault.amazon.aws.kms\keyvault.amazon.aws.kms.csproj" />
     <ProjectReference Include="..\keyvault.microsoft.azurekeyvault\keyvault.microsoft.azurekeyvault.csproj" />
     <ProjectReference Include="..\nuget.amazon.aws.kms.abstractions\nuget.amazon.aws.kms.abstractions.csproj" />
     <ProjectReference Include="..\nuget.amazon.aws.kms\nuget.amazon.aws.kms.csproj" />

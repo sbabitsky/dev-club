@@ -10,7 +10,7 @@ using keyvault.microsoft.azurekeyvault;
 // Register<IAzureKeyVault>.As<AzureKeyVault>().DecoratedWith(AzureKeyVaultWithOptionalCache);
 
 //IAzureKeyVault azureKeyVault = new AzureKeyVault();
-IKeyVault keyVault = new KeyVaultWithOptionalCache(new AzureKeyVault(), true);
+IKeyVault keyVault = new KeyVaultWithOptionalCache(new AzureKeyVault(new nuget.microsoft.azurekeyvault.AzureKeyVault()), true);
 
 //--------------------
 var validator = new KeyVaultCertificateValidator(new ExternalCertificatesStore(keyVault, new ExchangeConfiguration
