@@ -2,6 +2,7 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using dev.club.solid.azurekeyvault.abstractions;
+using nuget.microsoft.azurekeyvault.abstractions;
 
 namespace nuget.microsoft.azurekeyvault
 {

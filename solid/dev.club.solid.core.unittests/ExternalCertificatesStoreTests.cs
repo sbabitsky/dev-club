@@ -39,8 +39,8 @@ namespace dev.club.solid.core.unittests
 
             const string thumbprint = "19D5D6E2860E4080AE5A6249BBA85809";
 
-            _sut = new ExternalCertificatesStore(It.IsAny<IKeyVault>(), exchangeConfiguration);
-            Assert.That(_sut.IsTheCertificateIsStoredInAzure(thumbprint, out string _), Is.False);
+            _sut = new ExternalCertificatesStore(It.IsAny<IKeyVaultGetCertificate>(), exchangeConfiguration);
+            Assert.That(_sut.IsTheCertificateIsStoredInTheKeyVault(thumbprint, out string _), Is.False);
         }
 
         [Test]
@@ -60,8 +60,8 @@ namespace dev.club.solid.core.unittests
                 }
             };
 
-            _sut = new ExternalCertificatesStore(It.IsAny<IKeyVault>(), exchangeConfiguration);
-            Assert.That(_sut.IsTheCertificateIsStoredInAzure(thumbprint, out string uniqueId), Is.True);
+            _sut = new ExternalCertificatesStore(It.IsAny<IKeyVaultGetCertificate>(), exchangeConfiguration);
+            Assert.That(_sut.IsTheCertificateIsStoredInTheKeyVault(thumbprint, out string uniqueId), Is.True);
             Assert.That(uniqueId, Is.EqualTo("SomeUniqueId"));
         }
 
@@ -70,8 +70,8 @@ namespace dev.club.solid.core.unittests
         {
             for (int i = 0; i < 1 * 60 * 60; i++)
             {
-                _sut = new ExternalCertificatesStore(It.IsAny<IKeyVault>(), _hugeExchangeConfiguration);
-                Assert.That(_sut.IsTheCertificateIsStoredInAzure("999", out string uniqueId), Is.True);
+                _sut = new ExternalCertificatesStore(It.IsAny<IKeyVaultGetCertificate>(), _hugeExchangeConfiguration);
+                Assert.That(_sut.IsTheCertificateIsStoredInTheKeyVault("999", out string uniqueId), Is.True);
                 Assert.That(uniqueId, Is.EqualTo("unique999"));
             }
         }
@@ -93,8 +93,8 @@ namespace dev.club.solid.core.unittests
                 }
             };
 
-            _sut = new ExternalCertificatesStore(It.IsAny<IKeyVault>(), exchangeConfiguration);
-            Assert.That(_sut.IsTheCertificateIsStoredInAzure(thumbprint, out string uniqueId), Is.True);
+            _sut = new ExternalCertificatesStore(It.IsAny<IKeyVaultGetCertificate>(), exchangeConfiguration);
+            Assert.That(_sut.IsTheCertificateIsStoredInTheKeyVault(thumbprint, out string uniqueId), Is.True);
             Assert.That(uniqueId, Is.EqualTo("SomeUniqueId"));
         }
 
@@ -103,7 +103,7 @@ namespace dev.club.solid.core.unittests
         {
             Assert.Throws<InvalidOperationException>(() =>
             {
-                _sut = new ExternalCertificatesStore(It.IsAny<IKeyVault>(), null!);
+                _sut = new ExternalCertificatesStore(It.IsAny<IKeyVaultGetCertificate>(), null!);
             });
         }
 
@@ -112,7 +112,7 @@ namespace dev.club.solid.core.unittests
         {
             Assert.Throws<InvalidOperationException>(() =>
             {
-                _sut = new ExternalCertificatesStore(It.IsAny<IKeyVault>(), new ExchangeConfiguration());
+                _sut = new ExternalCertificatesStore(It.IsAny<IKeyVaultGetCertificate>(), new ExchangeConfiguration());
             });
         }
 
@@ -140,7 +140,7 @@ namespace dev.club.solid.core.unittests
 
             Assert.Throws<InvalidOperationException>(() =>
             {
-                _sut = new ExternalCertificatesStore(It.IsAny<IKeyVault>(), exchangeConfiguration);
+                _sut = new ExternalCertificatesStore(It.IsAny<IKeyVaultGetCertificate>(), exchangeConfiguration);
             });
         }
     }

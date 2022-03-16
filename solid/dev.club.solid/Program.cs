@@ -4,16 +4,22 @@ using dev.club.solid.core;
 using dev.club.solid.host;
 using dev.club.solid.wcf;
 using keyvault.abstractions;
+using keyvault.amazon.aws.kms;
 using keyvault.microsoft.azurekeyvault;
+using nuget.amazon.aws.kms;
 
 // DI container
 // Register<IAzureKeyVault>.As<AzureKeyVault>().DecoratedWith(AzureKeyVaultWithOptionalCache);
 
 //IAzureKeyVault azureKeyVault = new AzureKeyVault();
-IKeyVault keyVault = new KeyVaultWithOptionalCache(new AzureKeyVault(new nuget.microsoft.azurekeyvault.AzureKeyVault()), true);
+
+var azureKeyVault = new AzureKeyVault(new nuget.microsoft.azurekeyvault.AzureKeyVault());
+
+IKeyVault keyVault = new KeyVaultWithOptionalCache(azureKeyVault, true);
 
 //--------------------
-var validator = new KeyVaultCertificateValidator(new ExternalCertificatesStore(keyVault, new ExchangeConfiguration
+
+var validator = new KeyVaultCertificateValidator(new ExternalCertificatesStore(new Lazy<IKeyVaultGetCertificate>(() => azureKeyVault.CreateClientAsync().GetAwaiter().GetResult()), new ExchangeConfiguration
 {
     CertificateMappings = new List<CertificateMapping>
     {
@@ -30,8 +36,6 @@ var validator = new KeyVaultCertificateValidator(new ExternalCertificatesStore(k
     }
 }), null!);
 validator.Validate(certificate: null!);
-
-
 
 var adminPanel = new AdminPanel(keyVault); // from DI
 

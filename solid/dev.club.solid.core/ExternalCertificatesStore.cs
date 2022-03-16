@@ -9,12 +9,12 @@ namespace dev.club.solid.core
 {
     public class ExternalCertificatesStore : ICertificatesStore
     {
-        private readonly IKeyVault _keyVault;
+        private readonly Lazy<IKeyVaultGetCertificate> _keyVaultGetCertificate;
         private readonly IDictionary<Thumbprint, string> _certificateMapping;
 
-        public ExternalCertificatesStore(IKeyVault keyVault, ExchangeConfiguration exchangeConfiguration)
+        public ExternalCertificatesStore(Lazy<IKeyVaultGetCertificate> keyVaultGetCertificate, ExchangeConfiguration exchangeConfiguration)
         {
-            _keyVault = keyVault;
+            _keyVaultGetCertificate = keyVaultGetCertificate;
 
             try
             {
@@ -30,12 +30,9 @@ namespace dev.club.solid.core
 
         public async Task<X509Certificate2> GetCertificateAsync(Thumbprint thumbprint)
         {
-            if (IsTheCertificateIsStoredInAzure(thumbprint, out string uniqueId))
+            if (IsTheCertificateIsStoredInTheKeyVault(thumbprint, out string uniqueId))
             {
-                using (var client = await _keyVault.CreateClientAsync())
-                {
-                    return await client.GetCertificateAsync(uniqueId);
-                }
+                return await _keyVaultGetCertificate.Value.GetCertificateAsync(uniqueId);
             }
 
             // new X509Store(StoreLocation.LocalMachine).Certificates;
@@ -43,7 +40,7 @@ namespace dev.club.solid.core
             return null!;
         }
 
-        public bool IsTheCertificateIsStoredInAzure(Thumbprint thumbprint, out string uniqueId)
+        public bool IsTheCertificateIsStoredInTheKeyVault(Thumbprint thumbprint, out string uniqueId)
         {
             return _certificateMapping.TryGetValue(thumbprint, out uniqueId);
         }
