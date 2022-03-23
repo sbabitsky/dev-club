@@ -13,6 +13,9 @@ namespace keyvault.microsoft.azurekeyvault
 
         public AzureKeyVaultClient(IAzureKeyVaultClient azureKeyVaultClient)
         {
+            // authorization
+            // request access token
+            // 3600 => 6 min
             _azureKeyVaultClient = azureKeyVaultClient;
         }
         public Task<X509Certificate2> GetCertificateAsync(object any)

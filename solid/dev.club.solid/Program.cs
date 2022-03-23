@@ -17,24 +17,27 @@ var azureKeyVault = new AzureKeyVault(new nuget.microsoft.azurekeyvault.AzureKey
 
 IKeyVault keyVault = new KeyVaultWithOptionalCache(azureKeyVault, true);
 
-//--------------------
-
-var validator = new KeyVaultCertificateValidator(new ExternalCertificatesStore(new Lazy<IKeyVaultGetCertificate>(() => azureKeyVault.CreateClientAsync().GetAwaiter().GetResult()), new ExchangeConfiguration
-{
-    CertificateMappings = new List<CertificateMapping>
+var externalCertificatesStore = new ExternalCertificatesStore(
+    async () => await azureKeyVault.CreateClientAsync(), new ExchangeConfiguration
     {
-        new CertificateMapping
+        CertificateMappings = new List<CertificateMapping>
         {
-            Thumbprint = "123123213",
-            UniqueId = "12332UniqueId"
-        },
-        new CertificateMapping
-        {
-            Thumbprint = "123123213",
-            UniqueId = "Unique2"
+            new CertificateMapping
+            {
+                Thumbprint = "123123213",
+                UniqueId = "12332UniqueId"
+            },
+            new CertificateMapping
+            {
+                Thumbprint = "123123213",
+                UniqueId = "Unique2"
+            }
         }
-    }
-}), null!);
+    });
+
+
+//--------------------
+var validator = new KeyVaultCertificateValidator(externalCertificatesStore, null!);
 validator.Validate(certificate: null!);
 
 var adminPanel = new AdminPanel(keyVault); // from DI

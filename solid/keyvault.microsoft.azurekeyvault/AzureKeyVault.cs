@@ -15,6 +15,9 @@ namespace keyvault.microsoft.azurekeyvault
         }
         public async Task<IKeyVaultClient> CreateClientAsync()
         {
+            // authorization
+            // request access token
+            // 3600 => 6 min
             return new AzureKeyVaultClient(await _azureKeyVault.CreateClientAsync());
         }
     }

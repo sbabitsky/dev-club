@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace keyvault.abstractions
 {
-    public interface IKeyVaultClient: IKeyVaultGetCertificate, IDisposable
+    public interface IKeyVaultClient: ICertificateProvider
     {
         Task<X509Certificate2> UploadCertificateAsync(object any);
 
@@ -19,7 +19,7 @@ namespace keyvault.abstractions
         Task DeleteAnythingAsync(object any);
     }
 
-    public interface IKeyVaultGetCertificate
+    public interface ICertificateProvider: IDisposable
     {
         Task<X509Certificate2> GetCertificateAsync(object any);
     }
