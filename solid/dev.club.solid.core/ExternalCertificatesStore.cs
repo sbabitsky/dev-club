@@ -9,12 +9,12 @@ namespace dev.club.solid.core
 {
     public class ExternalCertificatesStore : ICertificatesStore
     {
-        private readonly Func<Task<ICertificateProvider>> _createCertificateProvider;
+        private readonly ICertificateProvider _certificateProvider;
         private readonly IDictionary<Thumbprint, string> _certificateMapping;
 
-        public ExternalCertificatesStore(Func<Task<ICertificateProvider>> createCertificateProvider, ExchangeConfiguration exchangeConfiguration)
+        public ExternalCertificatesStore(ICertificateProvider certificateProvider, ExchangeConfiguration exchangeConfiguration)
         {
-            _createCertificateProvider = createCertificateProvider;
+            _certificateProvider = certificateProvider;
 
             try
             {
@@ -32,9 +32,7 @@ namespace dev.club.solid.core
         {
             if (IsTheCertificateIsStoredInTheKeyVault(thumbprint, out string uniqueId))
             {
-                using var certificateProvider = await _createCertificateProvider();
-                
-                return await certificateProvider.GetCertificateAsync(uniqueId);
+                return await _certificateProvider.GetCertificateAsync(uniqueId);
             }
 
             // new X509Store(StoreLocation.LocalMachine).Certificates;

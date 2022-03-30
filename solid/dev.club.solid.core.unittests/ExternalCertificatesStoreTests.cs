@@ -40,7 +40,7 @@ namespace dev.club.solid.core.unittests
 
             const string thumbprint = "19D5D6E2860E4080AE5A6249BBA85809";
 
-            _sut = new ExternalCertificatesStore(It.IsAny<Func<Task<ICertificateProvider>>>(), exchangeConfiguration);
+            _sut = new ExternalCertificatesStore(It.IsAny<ICertificateProvider>(), exchangeConfiguration);
             Assert.That(_sut.IsTheCertificateIsStoredInTheKeyVault(thumbprint, out string _), Is.False);
         }
 
@@ -61,7 +61,7 @@ namespace dev.club.solid.core.unittests
                 }
             };
 
-            _sut = new ExternalCertificatesStore(It.IsAny<Func<Task<ICertificateProvider>>>(), exchangeConfiguration);
+            _sut = new ExternalCertificatesStore(It.IsAny<ICertificateProvider>(), exchangeConfiguration);
             Assert.That(_sut.IsTheCertificateIsStoredInTheKeyVault(thumbprint, out string uniqueId), Is.True);
             Assert.That(uniqueId, Is.EqualTo("SomeUniqueId"));
         }
@@ -71,7 +71,7 @@ namespace dev.club.solid.core.unittests
         {
             for (int i = 0; i < 1 * 60 * 60; i++)
             {
-                _sut = new ExternalCertificatesStore(It.IsAny<Func<Task<ICertificateProvider>>>(), _hugeExchangeConfiguration);
+                _sut = new ExternalCertificatesStore(It.IsAny<ICertificateProvider>(), _hugeExchangeConfiguration);
                 Assert.That(_sut.IsTheCertificateIsStoredInTheKeyVault("999", out string uniqueId), Is.True);
                 Assert.That(uniqueId, Is.EqualTo("unique999"));
             }
@@ -94,7 +94,7 @@ namespace dev.club.solid.core.unittests
                 }
             };
 
-            _sut = new ExternalCertificatesStore(It.IsAny<Func<Task<ICertificateProvider>>>(), exchangeConfiguration);
+            _sut = new ExternalCertificatesStore(It.IsAny<ICertificateProvider>(), exchangeConfiguration);
             Assert.That(_sut.IsTheCertificateIsStoredInTheKeyVault(thumbprint, out string uniqueId), Is.True);
             Assert.That(uniqueId, Is.EqualTo("SomeUniqueId"));
         }
@@ -104,7 +104,7 @@ namespace dev.club.solid.core.unittests
         {
             Assert.Throws<InvalidOperationException>(() =>
             {
-                _sut = new ExternalCertificatesStore(It.IsAny<Func<Task<ICertificateProvider>>>(), null!);
+                _sut = new ExternalCertificatesStore(It.IsAny<ICertificateProvider>(), null!);
             });
         }
 
@@ -113,7 +113,7 @@ namespace dev.club.solid.core.unittests
         {
             Assert.Throws<InvalidOperationException>(() =>
             {
-                _sut = new ExternalCertificatesStore(It.IsAny<Func<Task<ICertificateProvider>>>(), new ExchangeConfiguration());
+                _sut = new ExternalCertificatesStore(It.IsAny<ICertificateProvider>(), new ExchangeConfiguration());
             });
         }
 
@@ -141,7 +141,7 @@ namespace dev.club.solid.core.unittests
 
             Assert.Throws<InvalidOperationException>(() =>
             {
-                _sut = new ExternalCertificatesStore(It.IsAny<Func<Task<ICertificateProvider>>>(), exchangeConfiguration);
+                _sut = new ExternalCertificatesStore(It.IsAny<ICertificateProvider>(), exchangeConfiguration);
             });
         }
     }

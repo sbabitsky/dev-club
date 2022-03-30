@@ -9,16 +9,15 @@ using keyvault.microsoft.azurekeyvault;
 using nuget.amazon.aws.kms;
 
 // DI container
-// Register<IAzureKeyVault>.As<AzureKeyVault>().DecoratedWith(AzureKeyVaultWithOptionalCache);
+// Register<IKeyVault>.As<AzureKeyVault>().DecoratedWith(AzureKeyVaultWithOptionalCache);
 
 //IAzureKeyVault azureKeyVault = new AzureKeyVault();
 
 var azureKeyVault = new AzureKeyVault(new nuget.microsoft.azurekeyvault.AzureKeyVault());
 
-IKeyVault keyVault = new KeyVaultWithOptionalCache(azureKeyVault, true);
+ICertificateProvider certificateProviderWithCache = new CertificateProviderWithCache(azureKeyVault);
 
-var externalCertificatesStore = new ExternalCertificatesStore(
-    async () => await azureKeyVault.CreateClientAsync(), new ExchangeConfiguration
+var externalCertificatesStore = new ExternalCertificatesStore(certificateProviderWithCache, new ExchangeConfiguration
     {
         CertificateMappings = new List<CertificateMapping>
         {
@@ -40,7 +39,7 @@ var externalCertificatesStore = new ExternalCertificatesStore(
 var validator = new KeyVaultCertificateValidator(externalCertificatesStore, null!);
 validator.Validate(certificate: null!);
 
-var adminPanel = new AdminPanel(keyVault); // from DI
+var adminPanel = new AdminPanel(azureKeyVault); // from DI
 
 
 Console.WriteLine("Hello, World!");
