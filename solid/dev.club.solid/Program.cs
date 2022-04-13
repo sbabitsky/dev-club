@@ -1,13 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using dev.club.sandbox;
 using dev.club.solid.core;
 using dev.club.solid.host;
 using dev.club.solid.wcf;
 using keyvault.abstractions;
-using keyvault.amazon.aws.kms;
 using keyvault.microsoft.azurekeyvault;
-using nuget.amazon.aws.kms;
-
+/*
 // DI container
 // Register<IKeyVault>.As<AzureKeyVault>().DecoratedWith(AzureKeyVaultWithOptionalCache);
 
@@ -41,5 +40,20 @@ validator.Validate(certificate: null!);
 
 var adminPanel = new AdminPanel(azureKeyVault); // from DI
 
+
+*/
+
+var tasks = new List<Task>();
+for (var i = 0; i < 20; i++)
+{
+    var task = Task.Run(() =>
+    {
+        LicenseProvider.Instance.DoSomething();
+    });
+    
+    tasks.Add(task);
+}
+
+Task.WaitAll(tasks.ToArray());
 
 Console.WriteLine("Hello, World!");

@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\dev.club.sandbox\dev.club.sandbox.csproj" />
     <ProjectReference Include="..\dev.club.solid.wcf\dev.club.solid.wcf.csproj" />
     <ProjectReference Include="..\keyvault.abstractions\keyvault.abstractions.csproj" />
     <ProjectReference Include="..\keyvault.amazon.aws.kms\keyvault.amazon.aws.kms.csproj" />
