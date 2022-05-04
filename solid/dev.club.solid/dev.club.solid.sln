@@ -33,7 +33,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "keyvault.amazon.aws.kms", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "keyvault", "keyvault", "{7C120C8E-B50C-45EF-88B0-CF90576B96B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.sandbox", "..\dev.club.sandbox\dev.club.sandbox.csproj", "{67333300-3059-45C7-8906-18ED5D2FD59D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.sandbox", "..\dev.club.sandbox\dev.club.sandbox.csproj", "{67333300-3059-45C7-8906-18ED5D2FD59D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.ca", "..\dev.club.ca\dev.club.ca.csproj", "{56431284-BCFB-4A59-AFAC-D237930934A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.ca.abstractions", "..\dev.club.ca.abstractions\dev.club.ca.abstractions.csproj", "{8CD97009-4EA9-4916-895B-8D1D9A44D58C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.ca.unittets", "..\dev.club.ca.unittets\dev.club.ca.unittets.csproj", "{6C1A8307-F248-45CE-9190-BE5F93C2E860}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +95,18 @@ Global
 		{67333300-3059-45C7-8906-18ED5D2FD59D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67333300-3059-45C7-8906-18ED5D2FD59D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67333300-3059-45C7-8906-18ED5D2FD59D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56431284-BCFB-4A59-AFAC-D237930934A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56431284-BCFB-4A59-AFAC-D237930934A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56431284-BCFB-4A59-AFAC-D237930934A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56431284-BCFB-4A59-AFAC-D237930934A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CD97009-4EA9-4916-895B-8D1D9A44D58C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CD97009-4EA9-4916-895B-8D1D9A44D58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CD97009-4EA9-4916-895B-8D1D9A44D58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CD97009-4EA9-4916-895B-8D1D9A44D58C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C1A8307-F248-45CE-9190-BE5F93C2E860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C1A8307-F248-45CE-9190-BE5F93C2E860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C1A8307-F248-45CE-9190-BE5F93C2E860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C1A8307-F248-45CE-9190-BE5F93C2E860}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
