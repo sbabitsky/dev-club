@@ -7,7 +7,7 @@ namespace dev.club.ca.abstractions
     {
         IssuedCertificateResponse IssueSelfSignedCertificate(IssueCertificateRequest request);
 
-        IssuedCertificateResponse IssueSSLCertificate(IssueCertificateRequest request);
+        IssuedCertificateResponse IssueSSLCertificate(IssueCertificateRequest request, CancellationToken cancellationToken);
     }
 
     public class IssueCertificateRequest

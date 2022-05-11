@@ -2,34 +2,52 @@
 
 namespace dev.club.ca
 {
+    // Role: Director
     public class LocalCertificateAuthority : ICertificateAuthority
     {
+        private readonly ICertificateBuilder _certificateBuilder;
+
+
+        // client code
+        public static void Main()
+        {
+            var certificateAuthority = new LocalCertificateAuthority(new EnhancedCertificateBuilder());
+
+            //certificateAuthority.IssueSSLCertificate()
+        }
+
+        public LocalCertificateAuthority(ICertificateBuilder certificateBuilder)
+        {
+            _certificateBuilder = certificateBuilder;
+        }
+
         public IssuedCertificateResponse IssueSelfSignedCertificate(IssueCertificateRequest request)
         {
-            var certificateBuilder = DefaultCertificateBuilder.Create(request.Subject, DateTimeOffset.Now, DateTimeOffset.Now.AddYears(1));
-
-            certificateBuilder
-                .CertificateUsageType(CertificateUsageType.SelfSigned)
-                .CalculateThumbprint();
+            _certificateBuilder
+                .CertificateUsageType(CertificateUsageType.SelfSigned);
 
             return new IssuedCertificateResponse
             {
-                Certificate = certificateBuilder.Build()
+                Certificate = _certificateBuilder.Validate().Build()
             };
         }
 
-        public IssuedCertificateResponse IssueSSLCertificate(IssueCertificateRequest request)
+        public IssuedCertificateResponse IssueSSLCertificate(IssueCertificateRequest request, CancellationToken cancellationToken)
         {
-            var certificateBuilder = DefaultCertificateBuilder.Create(request.Subject, DateTimeOffset.Now, DateTimeOffset.Now.AddYears(1));
-
-            certificateBuilder
+            _certificateBuilder
                 .FriendlyName(request.FriendlyName)
                 .CertificateUsageType(CertificateUsageType.SSL)
-                .CalculateThumbprint();
+                .NotAfter(DateTimeOffset.Now)
+                .NotBefore(DateTimeOffset.Now);
+
+            if (cancellationToken.IsCancellationRequested)
+            {
+                return new IssuedCertificateResponse();
+            }
 
             return new IssuedCertificateResponse
             {
-                Certificate = certificateBuilder.Build()
+                Certificate = _certificateBuilder.Validate().Build()
             };
         }
     }

@@ -10,7 +10,7 @@ namespace dev.club.ca.unittets
         public void Setup()
         {
         }
-
+        /*
         [Test]
         public void IssueSSLCertificate_Always_ReturnsACertificate()
         {
@@ -42,5 +42,6 @@ namespace dev.club.ca.unittets
 
             Assert.That(response.Certificate, Is.Not.Null);
         }
+        */
     }
 }

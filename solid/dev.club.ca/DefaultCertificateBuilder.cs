@@ -4,7 +4,7 @@ using dev.club.ca.abstractions;
 
 namespace dev.club.ca
 {
-    public class DefaultCertificateBuilder : ICertificateBuilder
+    public class DefaultCertificateBuilder : ICertificateBuilder, ICertificateBuilderFinalStep
     {
         private readonly X509Certificate2 _certificate;
 
@@ -22,6 +22,21 @@ namespace dev.club.ca
             return new DefaultCertificateBuilder(certificate);
         }
 
+        public ICertificateBuilder Subject(string subject)
+        {
+            return this;
+        }
+
+        public ICertificateBuilder NotBefore(DateTimeOffset notBefore)
+        {
+            return this;
+        }
+
+        public ICertificateBuilder NotAfter(DateTimeOffset notAfter)
+        {
+            return this;
+        }
+
         public ICertificateBuilder FriendlyName(string friendlyName)
         {
             _certificate.FriendlyName = friendlyName;
@@ -35,7 +50,7 @@ namespace dev.club.ca
             return this;
         }
 
-        public ICertificateBuilder CalculateThumbprint()
+        public ICertificateBuilderFinalStep Validate()
         {
             if (string.IsNullOrEmpty(_certificate.Thumbprint))
             {
