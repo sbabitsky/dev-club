@@ -24,6 +24,7 @@ namespace dev.club.ca
         public IssuedCertificateResponse IssueSelfSignedCertificate(IssueCertificateRequest request)
         {
             _certificateBuilder
+                .Subject(request.Subject)
                 .CertificateUsageType(CertificateUsageType.SelfSigned);
 
             return new IssuedCertificateResponse
@@ -35,6 +36,7 @@ namespace dev.club.ca
         public IssuedCertificateResponse IssueSSLCertificate(IssueCertificateRequest request, CancellationToken cancellationToken)
         {
             _certificateBuilder
+                .Subject(request.Subject)
                 .FriendlyName(request.FriendlyName)
                 .CertificateUsageType(CertificateUsageType.SSL)
                 .NotAfter(DateTimeOffset.Now)
