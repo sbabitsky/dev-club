@@ -5,9 +5,14 @@ namespace dev.club.ca.abstractions
     // Role: Director
     public interface ICertificateAuthority
     {
-        IssuedCertificateResponse IssueSelfSignedCertificate(IssueCertificateRequest request);
+        IssuedCertificateResponse IssueSelfSignedCertificate(IssueSelfSignedCertificateRequest request);
 
         IssuedCertificateResponse IssueSSLCertificate(IssueCertificateRequest request, CancellationToken cancellationToken);
+    }
+
+    public class IssueSelfSignedCertificateRequest
+    {
+        public string Subject { get; set; }
     }
 
     public class IssueCertificateRequest

@@ -5,41 +5,39 @@ namespace dev.club.ca
     // Role: Director
     public class LocalCertificateAuthority : ICertificateAuthority
     {
-        private readonly ICertificateBuilder _certificateBuilder;
+        private readonly ICertificateBuilderFactory _certificateBuilderFactory;
 
 
-        // client code
-        public static void Main()
+        public LocalCertificateAuthority(ICertificateBuilderFactory certificateBuilderFactory)
         {
-            var certificateAuthority = new LocalCertificateAuthority(new EnhancedCertificateBuilder());
-
-            //certificateAuthority.IssueSSLCertificate()
+            _certificateBuilderFactory = certificateBuilderFactory;
         }
 
-        public LocalCertificateAuthority(ICertificateBuilder certificateBuilder)
+        public IssuedCertificateResponse IssueSelfSignedCertificate(IssueSelfSignedCertificateRequest request)
         {
-            _certificateBuilder = certificateBuilder;
-        }
+            var certificateBuilder = _certificateBuilderFactory.Create();
 
-        public IssuedCertificateResponse IssueSelfSignedCertificate(IssueCertificateRequest request)
-        {
-            _certificateBuilder
+            certificateBuilder
                 .Subject(request.Subject)
-                .CertificateUsageType(CertificateUsageType.SelfSigned);
+                .CertificateUsageType(CertificateUsageType.SelfSigned)
+                .NotAfter(DateTimeOffset.Now.AddYears(1))
+                .NotBefore(DateTimeOffset.Now);
 
             return new IssuedCertificateResponse
             {
-                Certificate = _certificateBuilder.Validate().Build()
+                Certificate = certificateBuilder.Validate().Build()
             };
         }
 
         public IssuedCertificateResponse IssueSSLCertificate(IssueCertificateRequest request, CancellationToken cancellationToken)
         {
-            _certificateBuilder
+            var certificateBuilder = _certificateBuilderFactory.Create();
+
+            certificateBuilder
                 .Subject(request.Subject)
                 .FriendlyName(request.FriendlyName)
                 .CertificateUsageType(CertificateUsageType.SSL)
-                .NotAfter(DateTimeOffset.Now)
+                .NotAfter(DateTimeOffset.Now.AddYears(1))
                 .NotBefore(DateTimeOffset.Now);
 
             if (cancellationToken.IsCancellationRequested)
@@ -49,7 +47,7 @@ namespace dev.club.ca
 
             return new IssuedCertificateResponse
             {
-                Certificate = _certificateBuilder.Validate().Build()
+                Certificate = certificateBuilder.Validate().Build()
             };
         }
     }

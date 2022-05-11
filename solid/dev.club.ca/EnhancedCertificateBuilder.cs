@@ -4,7 +4,7 @@ using dev.club.ca.abstractions;
 
 namespace dev.club.ca
 {
-    internal class EnhancedCertificateBuilder : ICertificateBuilder, ICertificateBuilderFinalStep
+    public class EnhancedCertificateBuilder : ICertificateBuilder, ICertificateBuilderFinalStep
     {
         private string _friendlyName;
         private CertificateUsageType _certificateUsageType;
@@ -61,8 +61,11 @@ namespace dev.club.ca
         {
             using var ecdsa = ECDsa.Create();
             var req = new CertificateRequest(_subject, ecdsa, HashAlgorithmName.SHA256);
-            return req.CreateSelfSigned(_notBefore ?? DateTimeOffset.Now, _notAfter ?? DateTimeOffset.Now.AddYears(1));
-            // invoke Azure
+            var certificate = req.CreateSelfSigned(_notBefore ?? DateTimeOffset.Now, _notAfter ?? DateTimeOffset.Now.AddYears(1));
+
+            certificate.FriendlyName = _friendlyName;
+
+            return certificate;
         }
     }
 }

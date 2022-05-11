@@ -8,7 +8,11 @@ namespace dev.club.ca
     {
         private readonly X509Certificate2 _certificate;
 
-        private DefaultCertificateBuilder(X509Certificate2 certificate)
+        public DefaultCertificateBuilder()
+        {
+
+        }
+        public DefaultCertificateBuilder(X509Certificate2 certificate)
         {
             _certificate = certificate ?? throw new InvalidOperationException("A certificate must be created first.");
         }
