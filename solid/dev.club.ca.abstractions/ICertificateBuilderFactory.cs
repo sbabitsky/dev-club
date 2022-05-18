@@ -3,7 +3,5 @@
     public interface ICertificateBuilderFactory
     {
         ICertificateBuilder Create();
-
-        ICertificateBuilder Get();
     }
 }

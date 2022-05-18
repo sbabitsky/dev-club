@@ -13,15 +13,5 @@ namespace dev.club.ca
         {
             return new EnhancedCertificateBuilder();
         }
-
-        /// <summary>
-        /// Can CREATE a new one or CAN REUSE some existing instance
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public ICertificateBuilder Get()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
