@@ -32,7 +32,7 @@ namespace dev.club.ca
             cloudEndpointConfiguration.UniqueClientId = nameof(SomeClient);
         }
     }
-    internal class CloudCertificateBuilderFactory : ICertificateBuilderFactory
+    internal class CloudCertificateBuilderFactory : ICertificateBuilderAbstractFactory
     {
         private CloudCertificateBuilder _prototypeBuilder;
         private string _accessToken;

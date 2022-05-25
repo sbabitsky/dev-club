@@ -17,7 +17,7 @@ namespace dev.club.ca.unittets
         [Test]
         public void InvalidCase()
         {
-            var sut = new LocalCertificateAuthority(new EnhancedCertificateBuilderFactory());
+            var sut = new LocalCertificateAuthority(new EnhancedCertificateBuilderAbstractFactory());
 
             var tasks = new List<Task>(1000);
             for (int i = 0; i < 10; i++)

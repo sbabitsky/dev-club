@@ -2,7 +2,7 @@
 
 namespace dev.club.ca
 {
-    public class EnhancedCertificateBuilderFactory : ICertificateBuilderFactory
+    public class EnhancedCertificateBuilderFactory : ICertificateBuilderAbstractFactory
     {
         /// <summary>
         /// MOST LIKELY WILL CREATE a new one EACH TIME

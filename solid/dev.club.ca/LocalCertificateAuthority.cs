@@ -5,10 +5,10 @@ namespace dev.club.ca
     // Role: Director
     public class LocalCertificateAuthority : ICertificateAuthority
     {
-        private readonly ICertificateBuilderFactory _certificateBuilderFactory;
+        private readonly ICertificateBuilderAbstractFactory _certificateBuilderFactory;
 
 
-        public LocalCertificateAuthority(ICertificateBuilderFactory certificateBuilderFactory)
+        public LocalCertificateAuthority(ICertificateBuilderAbstractFactory certificateBuilderFactory)
         {
             _certificateBuilderFactory = certificateBuilderFactory;
         }

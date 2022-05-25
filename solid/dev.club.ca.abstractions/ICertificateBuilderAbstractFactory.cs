@@ -1,6 +1,6 @@
 ﻿namespace dev.club.ca.abstractions
 {
-    public interface ICertificateBuilderFactory
+    public interface ICertificateBuilderAbstractFactory
     {
         ICertificateBuilder Create();
     }
