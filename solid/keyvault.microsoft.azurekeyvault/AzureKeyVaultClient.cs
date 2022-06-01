@@ -17,9 +17,9 @@ namespace keyvault.microsoft.azurekeyvault
             // 3600 => 6 min
             _azureKeyVaultClient = azureKeyVaultClient;
         }
-        public Task<X509Certificate2> GetCertificateAsync(object any)
+        public Task<X509Certificate2> GetCertificateAsync(string thumbprint)
         {
-            return _azureKeyVaultClient.GetCertificateAsync(any);
+            return _azureKeyVaultClient.GetCertificateAsync(thumbprint);
         }
 
         public void Dispose()

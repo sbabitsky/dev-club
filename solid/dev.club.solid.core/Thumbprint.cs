@@ -14,6 +14,11 @@
             return new Thumbprint(thumbprint);
         }
 
+        public static implicit operator string(Thumbprint thumbprint)
+        {
+            return thumbprint._thumbprint;
+        }
+
         public override bool Equals(object obj)
         {
             if (obj is Thumbprint b)

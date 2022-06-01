@@ -21,6 +21,6 @@ namespace keyvault.abstractions
 
     public interface ICertificateProvider
     {
-        Task<X509Certificate2> GetCertificateAsync(object any);
+        Task<X509Certificate2> GetCertificateAsync(string thumbprint);
     }
 }
