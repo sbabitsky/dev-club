@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IdentityModel.Selectors;
 using System.Security.Cryptography.X509Certificates;
-using dev.club.solid.core;
+using Dev.Club.Solid.Core;
 using Microsoft.Extensions.Logging;
 
 namespace dev.club.solid.wcf

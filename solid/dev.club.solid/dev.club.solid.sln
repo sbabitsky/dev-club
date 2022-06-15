@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.host", "dev.club.solid.host.csproj", "{B70020B4-036B-491D-9E1F-99801D49A196}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.Solid.Host", "Dev.Club.Solid.Host.csproj", "{B70020B4-036B-491D-9E1F-99801D49A196}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.microsoft.azurekeyvault", "..\nuget.microsoft.azurekeyvault\nuget.microsoft.azurekeyvault.csproj", "{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.KeyVault", "..\nuget.microsoft.azurekeyvault\Microsoft.Azure.KeyVault.csproj", "{CEEB7C62-C9F9-4A69-9DF1-CDE2D5A998B2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.wcf", "..\dev.club.solid.wcf\dev.club.solid.wcf.csproj", "{55DDBF16-166B-4BC9-928E-69C63E5FA0C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.Solid.Wcf", "..\dev.club.solid.wcf\Dev.Club.Solid.Wcf.csproj", "{55DDBF16-166B-4BC9-928E-69C63E5FA0C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.microsoft.azurekeyvault.abstractions", "..\nuget.microsoft.azurekeyvault.abstractions\nuget.microsoft.azurekeyvault.abstractions.csproj", "{60092E94-CB8F-407C-ABDF-07B95966A03F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.KeyVault.Abstractions", "..\nuget.microsoft.azurekeyvault.abstractions\Microsoft.Azure.KeyVault.Abstractions.csproj", "{60092E94-CB8F-407C-ABDF-07B95966A03F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.core", "..\dev.club.solid.core\dev.club.solid.core.csproj", "{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.Solid.Core", "..\dev.club.solid.core\Dev.Club.Solid.Core.csproj", "{8E50DC8A-9DC2-40FE-8A41-25B2D71C2FE6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.solid.core.unittests", "..\dev.club.solid.core.unittests\dev.club.solid.core.unittests.csproj", "{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.Solid.Core.UnitTests", "..\dev.club.solid.core.unittests\Dev.Club.Solid.Core.UnitTests.csproj", "{EAF8E242-4D8F-4E5D-A9C1-27F68062DB37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.amazon.aws.kms.abstractions", "..\nuget.amazon.aws.kms.abstractions\nuget.amazon.aws.kms.abstractions.csproj", "{D21291C0-8E22-4443-9D2E-25F32A7842BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amazon.Aws.Kms.Abstractions", "..\nuget.amazon.aws.kms.abstractions\Amazon.Aws.Kms.Abstractions.csproj", "{D21291C0-8E22-4443-9D2E-25F32A7842BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nuget.amazon.aws.kms", "..\nuget.amazon.aws.kms\nuget.amazon.aws.kms.csproj", "{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amazon.Aws.Kms", "..\nuget.amazon.aws.kms\Amazon.Aws.Kms.csproj", "{20D5C19B-ED01-405B-9CC5-3FBE6BED9B0F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{9525DBA9-13D1-464A-8758-57C734BCA40F}"
 EndProject
@@ -25,23 +25,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "amazon", "amazon", "{64F1B4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microsoft", "microsoft", "{B78689F5-3B06-45C2-AB8B-916CABD3A213}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "keyvault.abstractions", "..\keyvault.abstractions\keyvault.abstractions.csproj", "{EC457FB1-6EFE-4D3A-8F17-A2A83D6F098E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVault.Abstractions", "..\keyvault.abstractions\KeyVault.Abstractions.csproj", "{EC457FB1-6EFE-4D3A-8F17-A2A83D6F098E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "keyvault.microsoft.azurekeyvault", "..\keyvault.microsoft.azurekeyvault\keyvault.microsoft.azurekeyvault.csproj", "{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVault.Microsoft.AzureKeyVault", "..\keyvault.microsoft.azurekeyvault\KeyVault.Microsoft.AzureKeyVault.csproj", "{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "keyvault.amazon.aws.kms", "..\keyvault.amazon.aws.kms\keyvault.amazon.aws.kms.csproj", "{661E7E3D-8F91-4F0F-826B-C36A07895F9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVault.Amazon.Aws.Kms", "..\keyvault.amazon.aws.kms\KeyVault.Amazon.Aws.Kms.csproj", "{661E7E3D-8F91-4F0F-826B-C36A07895F9E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "keyvault", "keyvault", "{7C120C8E-B50C-45EF-88B0-CF90576B96B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.sandbox", "..\dev.club.sandbox\dev.club.sandbox.csproj", "{67333300-3059-45C7-8906-18ED5D2FD59D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.Sandbox", "..\dev.club.sandbox\Dev.Club.Sandbox.csproj", "{67333300-3059-45C7-8906-18ED5D2FD59D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.ca", "..\dev.club.ca\dev.club.ca.csproj", "{56431284-BCFB-4A59-AFAC-D237930934A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.CertificationAuthority", "..\dev.club.ca\Dev.Club.CertificationAuthority.csproj", "{56431284-BCFB-4A59-AFAC-D237930934A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.ca.abstractions", "..\dev.club.ca.abstractions\dev.club.ca.abstractions.csproj", "{8CD97009-4EA9-4916-895B-8D1D9A44D58C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.CertificationAuthority.Abstractions", "..\dev.club.ca.abstractions\Dev.Club.CertificationAuthority.Abstractions.csproj", "{8CD97009-4EA9-4916-895B-8D1D9A44D58C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dev.club.ca.unittets", "..\dev.club.ca.unittets\dev.club.ca.unittets.csproj", "{6C1A8307-F248-45CE-9190-BE5F93C2E860}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.CertificationAuthority.UnitTests", "..\dev.club.ca.unittets\Dev.Club.CertificationAuthority.UnitTests.csproj", "{6C1A8307-F248-45CE-9190-BE5F93C2E860}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dev.club.solid.core.decorators", "..\dev.club.solid.core.decorators\dev.club.solid.core.decorators.csproj", "{E0FCCCB0-1CA8-483C-A22F-614C2EE4B724}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.Solid.Core.Decorators", "..\dev.club.solid.core.decorators\Dev.Club.Solid.Core.Decorators.csproj", "{E0FCCCB0-1CA8-483C-A22F-614C2EE4B724}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

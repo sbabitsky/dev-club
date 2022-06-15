@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 
-namespace dev.club.ca.abstractions
+namespace Dev.Club.CertificationAuthority.Abstractions
 {
     // Role: Director
     public interface ICertificateAuthority

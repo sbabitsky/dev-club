@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using Amazon.Aws.Kms.Abstractions;
 
-namespace nuget.amazon.aws.kms
+namespace Amazon.Aws.Kms
 {
-    public class AwsKeyManagementServiceClient : abstractions.IAwsKeyManagementServiceClient
+    public class AwsKeyManagementServiceClient : IAwsKeyManagementServiceClient
     {
         public void Dispose()
         {

@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace dev.club.sandbox
+﻿namespace Dev.Club.Sandbox
 {
     // singleton
     /*

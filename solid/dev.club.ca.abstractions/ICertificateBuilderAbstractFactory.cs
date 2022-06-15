@@ -1,4 +1,4 @@
-﻿namespace dev.club.ca.abstractions
+﻿namespace Dev.Club.CertificationAuthority.Abstractions
 {
     public interface ICertificateBuilderAbstractFactory
     {

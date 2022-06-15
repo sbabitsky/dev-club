@@ -2,7 +2,7 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
-namespace keyvault.abstractions
+namespace KeyVault.Abstractions
 {
     public interface IKeyVaultClient: ICertificateProvider, IDisposable
     {

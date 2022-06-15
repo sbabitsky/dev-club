@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using keyvault.abstractions;
+using KeyVault.Abstractions;
 using Moq;
 using NUnit.Framework;
 
-namespace dev.club.solid.core.unittests
+namespace Dev.Club.Solid.Core.UnitTests
 {
     public class ExternalCertificatesStoreTests
     {

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dev.club.ca.abstractions\dev.club.ca.abstractions.csproj" />
-    <ProjectReference Include="..\dev.club.ca\dev.club.ca.csproj" />
+    <ProjectReference Include="..\dev.club.ca.abstractions\Dev.Club.CertificationAuthority.Abstractions.csproj" />
+    <ProjectReference Include="..\dev.club.ca\Dev.Club.CertificationAuthority.csproj" />
   </ItemGroup>
 
 </Project>

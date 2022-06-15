@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using keyvault.abstractions;
+using KeyVault.Abstractions;
 
-namespace keyvault.amazon.aws.kms
+namespace KeyVault.Amazon.Aws.Kms
 {
     public class AwsKeyManagementServiceKeyVault : IKeyVault
     {

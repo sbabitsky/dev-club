@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace dev.club.solid.core
+namespace Dev.Club.Solid.Core
 {
     public class ExchangeConfiguration
     {

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace keyvault.abstractions
+namespace KeyVault.Abstractions
 {
     public interface IKeyVault
     {

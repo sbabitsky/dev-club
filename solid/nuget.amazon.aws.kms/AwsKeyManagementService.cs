@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Amazon.Aws.Kms.Abstractions;
 
-namespace nuget.amazon.aws.kms
+namespace Amazon.Aws.Kms
 {
-    public class AwsKeyManagementService : abstractions.IAwsKeyManagementService
+    public class AwsKeyManagementService : IAwsKeyManagementService
     {
-        public Task<abstractions.IAwsKeyManagementServiceClient> CreateClientAsync()
+        public Task<IAwsKeyManagementServiceClient> CreateClientAsync()
         {
             throw new NotImplementedException();
         }

@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Caching;
-using keyvault.abstractions;
+using KeyVault.Abstractions;
 
-namespace dev.club.solid.core.decorators
+namespace Dev.Club.Solid.Core.Decorators
 {
     public class KeyVaultCacheDecorator : IKeyVault
     {

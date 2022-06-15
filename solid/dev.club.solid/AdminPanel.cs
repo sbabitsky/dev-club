@@ -1,6 +1,6 @@
-﻿using keyvault.abstractions;
+﻿using KeyVault.Abstractions;
 
-namespace dev.club.solid.host
+namespace Dev.Club.Solid.Host
 {
     public class AdminPanel
     {

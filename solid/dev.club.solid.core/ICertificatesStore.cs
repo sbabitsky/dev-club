@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
-namespace dev.club.solid.core
+namespace Dev.Club.Solid.Core
 {
     public interface ICertificatesStore
     {

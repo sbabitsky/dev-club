@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace nuget.amazon.aws.kms.abstractions
+namespace Amazon.Aws.Kms.Abstractions
 {
     public interface IAwsKeyManagementService
     {

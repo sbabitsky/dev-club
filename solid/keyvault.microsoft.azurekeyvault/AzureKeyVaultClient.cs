@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using keyvault.abstractions;
-using nuget.microsoft.azurekeyvault.abstractions;
+using KeyVault.Abstractions;
+using Microsoft.Azure.KeyVault.Abstractions;
 
-namespace keyvault.microsoft.azurekeyvault
+namespace KeyVault.Microsoft.AzureKeyVault
 {
     internal class AzureKeyVaultClient : IKeyVaultClient
     {

@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using dev.club.ca.abstractions;
-using Moq;
+using Dev.Club.CertificationAuthority.Abstractions;
 using NUnit.Framework;
 
-namespace dev.club.ca.unittets
+namespace Dev.Club.CertificationAuthority.UnitTests
 {
     public class LocalCertificateAuthorityTests
     {

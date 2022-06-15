@@ -1,4 +1,4 @@
-﻿namespace dev.club.solid.core
+﻿namespace Dev.Club.Solid.Core
 {
     public sealed class Thumbprint
     {

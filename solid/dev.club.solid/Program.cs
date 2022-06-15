@@ -1,19 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using dev.club.sandbox;
-using dev.club.solid.core;
-using dev.club.solid.core.decorators;
-using dev.club.solid.host;
+using Dev.Club.Solid.Core;
+using Dev.Club.Solid.Core.Decorators;
+using Dev.Club.Solid.Host;
 using dev.club.solid.wcf;
-using keyvault.abstractions;
-using keyvault.microsoft.azurekeyvault;
+using KeyVault.Abstractions;
+using KeyVault.Microsoft.AzureKeyVault;
 
 // DI container
 // Register<IKeyVault>.As<AzureKeyVault>().DecoratedWith(AzureKeyVaultWithOptionalCache);
 
 //IAzureKeyVault azureKeyVault = new AzureKeyVault();
 
-IKeyVault keyVault = new AzureKeyVault(new nuget.microsoft.azurekeyvault.AzureKeyVault());
+IKeyVault keyVault = new AzureKeyVault(new Microsoft.Azure.KeyVault.AzureKeyVault());
 
 bool isCacheEnabled = true;
 if (isCacheEnabled)

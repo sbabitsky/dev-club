@@ -1,6 +1,6 @@
-﻿using dev.club.ca.abstractions;
+﻿using Dev.Club.CertificationAuthority.Abstractions;
 
-namespace dev.club.ca
+namespace Dev.Club.CertificationAuthority
 {
     public class Host
     {

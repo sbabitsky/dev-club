@@ -1,9 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using dev.club.solid.azurekeyvault.abstractions;
-using keyvault.abstractions;
+﻿using System.Threading.Tasks;
+using KeyVault.Abstractions;
+using Microsoft.Azure.KeyVault.Abstractions;
 
-namespace keyvault.microsoft.azurekeyvault
+namespace KeyVault.Microsoft.AzureKeyVault
 {
     public class AzureKeyVault : IKeyVault
     {

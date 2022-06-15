@@ -2,7 +2,7 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
-namespace nuget.microsoft.azurekeyvault.abstractions
+namespace Microsoft.Azure.KeyVault.Abstractions
 {
     public interface IAzureKeyVaultClient: IDisposable
     {

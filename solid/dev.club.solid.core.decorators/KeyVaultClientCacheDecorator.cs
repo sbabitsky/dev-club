@@ -1,8 +1,8 @@
 ﻿using System.Runtime.Caching;
 using System.Security.Cryptography.X509Certificates;
-using keyvault.abstractions;
+using KeyVault.Abstractions;
 
-namespace dev.club.solid.core.decorators
+namespace Dev.Club.Solid.Core.Decorators
 {
     public class KeyVaultClientCacheDecorator : IKeyVaultClient
     {

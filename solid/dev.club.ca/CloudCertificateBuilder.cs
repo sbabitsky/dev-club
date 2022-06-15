@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using dev.club.ca.abstractions;
+using Dev.Club.CertificationAuthority.Abstractions;
 
-namespace dev.club.ca
+namespace Dev.Club.CertificationAuthority
 {
     internal class CloudCertificateBuilder : ICertificateBuilder, ICertificateBuilderFinalStep, ICloneable
     {

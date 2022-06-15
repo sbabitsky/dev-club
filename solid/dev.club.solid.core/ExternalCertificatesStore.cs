@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using keyvault.abstractions;
+using KeyVault.Abstractions;
 
-namespace dev.club.solid.core
+namespace Dev.Club.Solid.Core
 {
     public class ExternalCertificatesStore : ICertificatesStore
     {
