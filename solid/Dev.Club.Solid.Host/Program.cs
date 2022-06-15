@@ -5,7 +5,6 @@ using Dev.Club.Solid.Core.Decorators;
 using Dev.Club.Solid.Host;
 using dev.club.solid.wcf;
 using KeyVault.Abstractions;
-using KeyVault.Microsoft.AzureKeyVault;
 
 // DI container
 // Register<IKeyVault>.As<AzureKeyVault>().DecoratedWith(AzureKeyVaultWithOptionalCache);

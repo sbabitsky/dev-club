@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dev.club.ca.abstractions\Dev.Club.CertificationAuthority.Abstractions.csproj" />
+    <ProjectReference Include="..\Dev.Club.CertificationAuthority.Abstractions\Dev.Club.CertificationAuthority.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

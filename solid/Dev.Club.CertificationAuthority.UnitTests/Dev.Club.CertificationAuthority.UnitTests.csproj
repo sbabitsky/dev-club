@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dev.club.ca.abstractions\Dev.Club.CertificationAuthority.Abstractions.csproj" />
-    <ProjectReference Include="..\dev.club.ca\Dev.Club.CertificationAuthority.csproj" />
+    <ProjectReference Include="..\Dev.Club.CertificationAuthority.Abstractions\Dev.Club.CertificationAuthority.Abstractions.csproj" />
+    <ProjectReference Include="..\Dev.Club.CertificationAuthority\Dev.Club.CertificationAuthority.csproj" />
   </ItemGroup>
 
 </Project>
