@@ -16,7 +16,7 @@ namespace Dev.Club.CertificationAuthority.UnitTests
         [Test]
         public void InvalidCase()
         {
-            var sut = new LocalCertificateAuthority(new EnhancedCertificateBuilderAbstractFactory());
+            var sut = new LocalCertificateAuthority(new EnhancedCertificateBuilderFactory());
 
             var tasks = new List<Task>(1000);
             for (int i = 0; i < 10; i++)
