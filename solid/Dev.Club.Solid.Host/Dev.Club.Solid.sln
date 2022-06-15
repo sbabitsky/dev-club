@@ -27,8 +27,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microsoft", "microsoft", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVault.Abstractions", "..\KeyVault.Abstractions\KeyVault.Abstractions.csproj", "{EC457FB1-6EFE-4D3A-8F17-A2A83D6F098E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVault.Microsoft.Azure.KeyVault", "..\KeyVault.Microsoft.Azure.KeyVault\KeyVault.Microsoft.Azure.KeyVault.csproj", "{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVault.Amazon.Aws.Kms", "..\KeyVault.Amazon.Aws.Kms\KeyVault.Amazon.Aws.Kms.csproj", "{661E7E3D-8F91-4F0F-826B-C36A07895F9E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "keyvault", "keyvault", "{7C120C8E-B50C-45EF-88B0-CF90576B96B6}"
@@ -42,6 +40,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.CertificationAuthority.UnitTests", "..\Dev.Club.CertificationAuthority.UnitTests\Dev.Club.CertificationAuthority.UnitTests.csproj", "{6C1A8307-F248-45CE-9190-BE5F93C2E860}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.Solid.Core.Decorators", "..\Dev.Club.Solid.Core.Decorators\Dev.Club.Solid.Core.Decorators.csproj", "{E0FCCCB0-1CA8-483C-A22F-614C2EE4B724}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVault.Microsoft.AzureKeyVault", "..\KeyVault.Microsoft.Azure.KeyVault\KeyVault.Microsoft.AzureKeyVault.csproj", "{C553CD47-0F9C-4AD8-B55E-BDB8185600C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,10 +85,6 @@ Global
 		{EC457FB1-6EFE-4D3A-8F17-A2A83D6F098E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC457FB1-6EFE-4D3A-8F17-A2A83D6F098E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC457FB1-6EFE-4D3A-8F17-A2A83D6F098E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{661E7E3D-8F91-4F0F-826B-C36A07895F9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{661E7E3D-8F91-4F0F-826B-C36A07895F9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{661E7E3D-8F91-4F0F-826B-C36A07895F9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -113,6 +109,10 @@ Global
 		{E0FCCCB0-1CA8-483C-A22F-614C2EE4B724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0FCCCB0-1CA8-483C-A22F-614C2EE4B724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0FCCCB0-1CA8-483C-A22F-614C2EE4B724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C553CD47-0F9C-4AD8-B55E-BDB8185600C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C553CD47-0F9C-4AD8-B55E-BDB8185600C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C553CD47-0F9C-4AD8-B55E-BDB8185600C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C553CD47-0F9C-4AD8-B55E-BDB8185600C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,8 +125,8 @@ Global
 		{64F1B4EB-926F-4ECC-8AE2-3476771D8452} = {9525DBA9-13D1-464A-8758-57C734BCA40F}
 		{B78689F5-3B06-45C2-AB8B-916CABD3A213} = {9525DBA9-13D1-464A-8758-57C734BCA40F}
 		{EC457FB1-6EFE-4D3A-8F17-A2A83D6F098E} = {7C120C8E-B50C-45EF-88B0-CF90576B96B6}
-		{5FA3E7B8-772B-49F0-A846-64EBF17C2FD4} = {7C120C8E-B50C-45EF-88B0-CF90576B96B6}
 		{661E7E3D-8F91-4F0F-826B-C36A07895F9E} = {7C120C8E-B50C-45EF-88B0-CF90576B96B6}
+		{C553CD47-0F9C-4AD8-B55E-BDB8185600C2} = {7C120C8E-B50C-45EF-88B0-CF90576B96B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B23AB42C-1A92-4802-8909-62D74AE349E7}

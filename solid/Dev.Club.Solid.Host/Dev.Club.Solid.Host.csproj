@@ -16,16 +16,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Amazon.Aws.Kms.Abstractions\Amazon.Aws.Kms.Abstractions.csproj" />
+    <ProjectReference Include="..\Amazon.Aws.Kms\Amazon.Aws.Kms.csproj" />
     <ProjectReference Include="..\dev.club.sandbox\Dev.Club.Sandbox.csproj" />
     <ProjectReference Include="..\dev.club.solid.core.decorators\Dev.Club.Solid.Core.Decorators.csproj" />
     <ProjectReference Include="..\dev.club.solid.wcf\Dev.Club.Solid.Wcf.csproj" />
     <ProjectReference Include="..\keyvault.abstractions\KeyVault.Abstractions.csproj" />
     <ProjectReference Include="..\keyvault.amazon.aws.kms\KeyVault.Amazon.Aws.Kms.csproj" />
-    <ProjectReference Include="..\keyvault.microsoft.azurekeyvault\KeyVault.Microsoft.AzureKeyVault.csproj" />
-    <ProjectReference Include="..\nuget.amazon.aws.kms.abstractions\Amazon.Aws.Kms.Abstractions.csproj" />
-    <ProjectReference Include="..\nuget.amazon.aws.kms\Amazon.Aws.Kms.csproj" />
-    <ProjectReference Include="..\nuget.microsoft.azurekeyvault.abstractions\Microsoft.Azure.KeyVault.Abstractions.csproj" />
-    <ProjectReference Include="..\nuget.microsoft.azurekeyvault\Microsoft.Azure.KeyVault.csproj" />
+    <ProjectReference Include="..\KeyVault.Microsoft.Azure.KeyVault\KeyVault.Microsoft.AzureKeyVault.csproj" />
+    <ProjectReference Include="..\Microsoft.Azure.KeyVault.Abstractions\Microsoft.Azure.KeyVault.Abstractions.csproj" />
+    <ProjectReference Include="..\Microsoft.Azure.KeyVault\Microsoft.Azure.KeyVault.csproj" />
   </ItemGroup>
 
 </Project>
