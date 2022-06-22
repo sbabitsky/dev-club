@@ -1,4 +1,5 @@
-﻿using System.Runtime.Caching;
+﻿using System.Collections.Concurrent;
+using System.Runtime.Caching;
 using System.Security.Cryptography.X509Certificates;
 using KeyVault.Abstractions;
 
@@ -97,15 +98,22 @@ namespace Dev.Club.Solid.Core.Decorators
                 return (X509Certificate2)_cache.Get(certificateKey);
             }
 
-            // 4- 5 s
+            // 4+ 5 s
             // 5+
-            lock (typeof(KeyVaultClientCacheDecorator))
+
+            // scenario
+            // Client1, Client2, Client3, Client4, ... ClientN calling the method (service) at the EXACTLY same
+
+            // idea #1: introduce a dictionary {key, value}
+
+            lock (string.Intern(string.Concat(nameof(KeyVaultClientCacheDecorator), thumbprint)))
             {
                 if (_cache.Contains(certificateKey))
                 {
                     return (X509Certificate2)_cache.Get(certificateKey);
                 }
 
+                // 5 seconds, $0.01
                 var certificate = _original.GetCertificateAsync(thumbprint).GetAwaiter().GetResult();
 
                 _cache.Add(certificateKey, certificate, new CacheItemPolicy
