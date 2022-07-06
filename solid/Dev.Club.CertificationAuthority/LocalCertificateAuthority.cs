@@ -23,6 +23,11 @@ namespace Dev.Club.CertificationAuthority
                 .NotAfter(DateTimeOffset.Now.AddYears(1))
                 .NotBefore(DateTimeOffset.Now);
 
+
+            // record this information in the database
+            // audit trail
+            // certification information
+
             return new IssuedCertificateResponse
             {
                 Certificate = certificateBuilder.Validate().Build()

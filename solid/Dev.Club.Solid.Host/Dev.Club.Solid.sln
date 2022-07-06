@@ -43,6 +43,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dev.Club.Solid.Core.Decorat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVault.Microsoft.AzureKeyVault", "..\KeyVault.Microsoft.Azure.KeyVault\KeyVault.Microsoft.AzureKeyVault.csproj", "{C553CD47-0F9C-4AD8-B55E-BDB8185600C2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CA", "CA", "{CB878D2E-67D3-4EB6-ACFF-26DB96E67EE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertificationAuthority.Domain", "..\CertificationAuthority.Domain\CertificationAuthority.Domain.csproj", "{CB6244BB-2E13-41EE-A23F-B3E8C9676624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +117,10 @@ Global
 		{C553CD47-0F9C-4AD8-B55E-BDB8185600C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C553CD47-0F9C-4AD8-B55E-BDB8185600C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C553CD47-0F9C-4AD8-B55E-BDB8185600C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB6244BB-2E13-41EE-A23F-B3E8C9676624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB6244BB-2E13-41EE-A23F-B3E8C9676624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB6244BB-2E13-41EE-A23F-B3E8C9676624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB6244BB-2E13-41EE-A23F-B3E8C9676624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
