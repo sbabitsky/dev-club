@@ -1,5 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Security.Claims;
+using CertificationAuthority.Domain;
+using Dev.Club.CertificationAuthority.Data.EF;
 using Dev.Club.Solid.Core;
 using Dev.Club.Solid.Core.Decorators;
 using Dev.Club.Solid.Host;
@@ -46,5 +49,15 @@ validator.Validate(certificate: null!);
 
 var adminPanel = new AdminPanel(keyVault); // from DI
 
+
+var certificatesRepository = new CertificatesRepository(new ClaimsIdentity(), new CertificationAuthorityDbContext());
+
+var certificate = new Certificate
+{
+    Thumbprint = "182391839012389012AD123123123",
+    CompanyAddress = "Company A"
+};
+
+certificate = await certificatesRepository.SaveAsync(certificate);
 
 Console.WriteLine("Hello, World!");

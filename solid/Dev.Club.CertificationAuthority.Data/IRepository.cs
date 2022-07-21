@@ -2,6 +2,6 @@
 {
     public interface IRepository<TEntity>
     {
-        Task SaveAsync(TEntity entity);
+        Task<TEntity> SaveAsync(TEntity entity);
     }
 }
