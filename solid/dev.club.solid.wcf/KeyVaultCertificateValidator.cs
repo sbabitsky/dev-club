@@ -13,7 +13,7 @@ namespace dev.club.solid.wcf
 
         // key - thumbprint
         // value - unique id
-        public KeyVaultCertificateValidator(ICertificatesStore certificatesStore, ILogger logger)
+        public KeyVaultCertificateValidator(ICertificatesStore certificatesStore, ILogger<KeyVaultCertificateValidator> logger)
         {
             _certificatesStore = certificatesStore;
             _logger = logger;
@@ -37,8 +37,12 @@ namespace dev.club.solid.wcf
             }
             catch (Exception ex)
             {
+                var message = $"Failed to retrieve certificate with thumbprint {certificate.Thumbprint} from KeyVault: {ex.Message}";
+
+                _logger.LogError(ex, "Failed to retrieve certificate with {Thumbprint} from KeyVault. {ErrorMessage}", certificate.Thumbprint, ex.Message);
+                
                 throw new SecurityTokenValidationException(
-                    $"Failed to retrieve certificate with thumbprint {certificate.Thumbprint} from KeyVault: {ex.Message}",
+                    message,
                     ex);
             }
         }

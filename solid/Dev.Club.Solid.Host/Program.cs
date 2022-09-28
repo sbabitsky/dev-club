@@ -11,6 +11,26 @@ using Dev.Club.Solid.Host;
 using dev.club.solid.wcf;
 using KeyVault.Abstractions;
 using KeyVault.Microsoft.AzureKeyVault;
+using Microsoft.Extensions.DependencyInjection;using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Serilog;
+using Host = Microsoft.Extensions.Hosting.Host;
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Seq("http://localhost:5341")
+    .CreateBootstrapLogger();
+
+var host = Host.CreateDefaultBuilder() // Initialising the Host 
+    .ConfigureServices((context, services) => { // Adding the DI container for configuration
+        services.AddLogging(x => x.AddSerilog(Log.Logger));
+    })
+    .UseSerilog() // Add Serilog
+    .Build(); // Build the Host
+
+
+var logger = host.Services.GetRequiredService<ILogger<KeyVaultCertificateValidator>>();
+
+logger.LogInformation("We done something.");
 
 // DI container
 // Register<IKeyVault>.As<AzureKeyVault>().DecoratedWith(AzureKeyVaultWithOptionalCache);
@@ -49,8 +69,48 @@ var externalCertificatesStore = new ExternalCertificatesStore(certificateProvide
 var cert = DefaultCertificateBuilder.Create("cn=foo", DateTimeOffset.Now, DateTimeOffset.Now.AddDays(5))
     .Validate()
     .Build();
-var validator = new KeyVaultCertificateValidator(externalCertificatesStore, null!);
-validator.Validate(certificate: cert);
+
+
+
+try
+{
+    var validator = new KeyVaultCertificateValidator(externalCertificatesStore, logger);
+    validator.Validate(certificate: cert);
+}
+finally
+{
+    Log.CloseAndFlush();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var adminPanel = new AdminPanel(keyVault); // from DI
 
