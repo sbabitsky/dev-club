@@ -21,6 +21,7 @@
     <ProjectReference Include="..\Dev.Club.CertificationAuthority.Abstractions\Dev.Club.CertificationAuthority.Abstractions.csproj" />
     <ProjectReference Include="..\Dev.Club.CertificationAuthority.Data.EF\Dev.Club.CertificationAuthority.Data.EF.csproj" />
     <ProjectReference Include="..\Dev.Club.CertificationAuthority.Data\Dev.Club.CertificationAuthority.Data.Abstractions.csproj" />
+    <ProjectReference Include="..\Dev.Club.CertificationAuthority\Dev.Club.CertificationAuthority.csproj" />
     <ProjectReference Include="..\dev.club.sandbox\Dev.Club.Sandbox.csproj" />
     <ProjectReference Include="..\dev.club.solid.core.decorators\Dev.Club.Solid.Core.Decorators.csproj" />
     <ProjectReference Include="..\dev.club.solid.wcf\Dev.Club.Solid.Wcf.csproj" />

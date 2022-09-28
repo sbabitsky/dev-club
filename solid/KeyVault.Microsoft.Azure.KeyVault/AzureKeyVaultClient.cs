@@ -6,7 +6,7 @@ using Microsoft.Azure.KeyVault.Abstractions;
 
 namespace KeyVault.Microsoft.AzureKeyVault
 {
-    internal class AzureKeyVaultClient : IKeyVaultClient
+    public class AzureKeyVaultClient : IKeyVaultClient
     {
         private readonly IAzureKeyVaultClient _azureKeyVaultClient;
 

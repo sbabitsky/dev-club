@@ -7,11 +7,11 @@ namespace Dev.Club.Solid.Core.Decorators
 {
     public class KeyVaultClientCacheDecorator : IKeyVaultClient
     {
-        private readonly IKeyVaultClient _original;
+        private readonly IKeyVault _original;
 
         private readonly ObjectCache _cache;
 
-        public KeyVaultClientCacheDecorator(IKeyVaultClient original, ObjectCache cache)
+        public KeyVaultClientCacheDecorator(IKeyVault original, ObjectCache cache)
         {
             _original = original;
             _cache = cache;
@@ -26,6 +26,8 @@ namespace Dev.Club.Solid.Core.Decorators
                 return (X509Certificate2)_cache.Get(certificateKey);
             }
 
+            using var client = await _original.CreateClientAsync();
+
             lock (string.Intern(string.Concat(nameof(KeyVaultClientCacheDecorator), thumbprint)))
             {
                 if (_cache.Contains(certificateKey))
@@ -33,7 +35,7 @@ namespace Dev.Club.Solid.Core.Decorators
                     return (X509Certificate2)_cache.Get(certificateKey);
                 }
 
-                var certificate = _original.GetCertificateAsync(thumbprint).GetAwaiter().GetResult();
+                var certificate = client.GetCertificateAsync(thumbprint).GetAwaiter().GetResult();
 
                 _cache.Add(certificateKey, certificate, new CacheItemPolicy
                 {
@@ -48,17 +50,17 @@ namespace Dev.Club.Solid.Core.Decorators
 
         public void Dispose()
         {
-            _original.Dispose();
         }
 
-        public Task<X509Certificate2> UploadCertificateAsync(object any)
+        public async Task<X509Certificate2> UploadCertificateAsync(object any)
         {
-            return _original.UploadCertificateAsync(any);
+            using var client = await _original.CreateClientAsync();
+            return await client.UploadCertificateAsync(any);
         }
 
         public Task DeleteCertificateAsync(object any)
         {
-            return _original.DeleteCertificateAsync(any);
+            throw new System.NotImplementedException();
         }
 
         public Task<object> GetSecretAsync(object any)

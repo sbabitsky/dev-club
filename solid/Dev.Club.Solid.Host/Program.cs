@@ -1,7 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Runtime.Caching;
 using System.Security.Claims;
 using CertificationAuthority.Domain;
+using Dev.Club.CertificationAuthority;
 using Dev.Club.CertificationAuthority.Data.EF;
 using Dev.Club.Solid.Core;
 using Dev.Club.Solid.Core.Decorators;
@@ -23,7 +25,7 @@ if (isCacheEnabled)
     keyVault = new KeyVaultCacheDecorator(keyVault);
 }
 
-ICertificateProvider certificateProviderWithCache = new KeyVaultClientCacheDecorator(keyVault);
+ICertificateProvider certificateProviderWithCache = new KeyVaultClientCacheDecorator(keyVault, MemoryCache.Default);
 
 var externalCertificatesStore = new ExternalCertificatesStore(certificateProviderWithCache, new ExchangeConfiguration
     {
@@ -36,7 +38,7 @@ var externalCertificatesStore = new ExternalCertificatesStore(certificateProvide
             },
             new CertificateMapping
             {
-                Thumbprint = "123123213",
+                Thumbprint = "123123213123",
                 UniqueId = "Unique2"
             }
         }
@@ -44,8 +46,11 @@ var externalCertificatesStore = new ExternalCertificatesStore(certificateProvide
 
 
 //--------------------
+var cert = DefaultCertificateBuilder.Create("cn=foo", DateTimeOffset.Now, DateTimeOffset.Now.AddDays(5))
+    .Validate()
+    .Build();
 var validator = new KeyVaultCertificateValidator(externalCertificatesStore, null!);
-validator.Validate(certificate: null!);
+validator.Validate(certificate: cert);
 
 var adminPanel = new AdminPanel(keyVault); // from DI
 

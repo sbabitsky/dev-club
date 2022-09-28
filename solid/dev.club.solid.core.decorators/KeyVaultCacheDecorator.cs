@@ -15,7 +15,7 @@ namespace Dev.Club.Solid.Core.Decorators
 
         public async Task<IKeyVaultClient> CreateClientAsync()
         {
-            return new KeyVaultClientCacheDecorator(await _original.CreateClientAsync(), KeyVaultCache);
+            return new KeyVaultClientCacheDecorator(_original, KeyVaultCache);
         }
     }
 }
