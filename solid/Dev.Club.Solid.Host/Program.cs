@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Diagnostics;
 using System.Runtime.Caching;
 using System.Security.Claims;
 using CertificationAuthority.Domain;
@@ -72,15 +73,32 @@ var cert = DefaultCertificateBuilder.Create("cn=foo", DateTimeOffset.Now, DateTi
 
 
 
+var timer = new Stopwatch();
+timer.Start();
 try
 {
-    var validator = new KeyVaultCertificateValidator(externalCertificatesStore, logger);
-    validator.Validate(certificate: cert);
+
+    for (int i = 0; i < 1; i++)
+    {
+        try
+        {
+            var validator = new KeyVaultCertificateValidator(externalCertificatesStore, logger);
+            validator.Validate(certificate: cert);
+        }
+        catch {}
+    }
 }
 finally
 {
     Log.CloseAndFlush();
 }
+
+timer.Stop();
+
+//00:00:13.5841500
+
+Console.WriteLine(timer.Elapsed);
+Console.ReadLine();
 
 
 
